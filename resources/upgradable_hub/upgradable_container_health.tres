@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="UpgradableHubContainer" load_steps=9 format=3 uid="uid://bi0s32o5k3nmv"]
+[gd_resource type="Resource" script_class="UpgradableHubContainer" load_steps=11 format=3 uid="uid://bi0s32o5k3nmv"]
 
 [ext_resource type="Script" path="res://scipts/upgradable_hub_container.gd" id="1_1jvgy"]
 [ext_resource type="Texture2D" uid="uid://ldcii3m1a0bj" path="res://assets/base_building_ui/Elements/IconD04.png" id="1_rlxsb"]
 [ext_resource type="Resource" uid="uid://dbnjormwhrs6c" path="res://resources/upgradable_hub/health/upgrade_hub_health_0.tres" id="2_gi4ei"]
+[ext_resource type="Texture2D" uid="uid://b40xhjqm14umb" path="res://assets/base_building_ui/Elements/IconD12.png" id="2_wec1h"]
+[ext_resource type="Texture2D" uid="uid://234uoc8h0two" path="res://assets/base_building_ui/Elements/IconD09.png" id="3_pelgj"]
 [ext_resource type="Resource" uid="uid://ceduryum5g84n" path="res://resources/upgradable_hub/health/upgrade_hub_health_1.tres" id="3_wgso8"]
 [ext_resource type="Resource" uid="uid://nlcxx6886g35" path="res://resources/upgradable_hub/health/upgrade_hub_health_2.tres" id="4_q3hxm"]
 [ext_resource type="Resource" uid="uid://mwhhj07chon5" path="res://resources/upgradable_hub/health/upgrade_hub_health_3.tres" id="5_c2l6d"]
@@ -11,6 +13,8 @@
 
 [resource]
 script = ExtResource("1_1jvgy")
-attribute_icon = ExtResource("1_rlxsb")
 attribute_name = "Health"
 upgradables_list = Array[Resource("res://scipts/upgradable_hub_level.gd")]([ExtResource("2_gi4ei"), ExtResource("3_wgso8"), ExtResource("4_q3hxm"), ExtResource("5_c2l6d"), ExtResource("6_wti37"), ExtResource("7_t7wh3")])
+attribute_icon = ExtResource("1_rlxsb")
+attribute_icon_sucess = ExtResource("3_pelgj")
+attribute_icon_failure = ExtResource("2_wec1h")

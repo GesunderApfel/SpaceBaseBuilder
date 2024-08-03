@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dunfcjr06cb70"]
+[gd_scene load_steps=4 format=3 uid="uid://dunfcjr06cb70"]
 
 [ext_resource type="Script" path="res://scipts/upgradable_hub_ui.gd" id="1_rljbk"]
 [ext_resource type="Resource" uid="uid://bi0s32o5k3nmv" path="res://resources/upgradable_hub/upgradable_container_health.tres" id="2_uc7xd"]
+[ext_resource type="PackedScene" uid="uid://dqqcoaqrcw5pb" path="res://scenes/base_building/hub_upgrade_ui.tscn" id="3_3bgos"]
 
 [node name="HubUpgradeHealthUI" type="Control"]
 layout_mode = 3
@@ -14,58 +15,4 @@ script = ExtResource("1_rljbk")
 building_name = "Base"
 upgradable_container = ExtResource("2_uc7xd")
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 22.14
-offset_top = 56.09
-offset_right = 22.14
-offset_bottom = 56.09
-
-[node name="Panel" type="Panel" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 182.0
-offset_bottom = 117.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BuildingName" type="Label" parent="Control/Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = -36.0
-offset_right = 20.0
-offset_bottom = -13.0
-grow_horizontal = 2
-text = "Building Name"
-
-[node name="Button" type="Button" parent="Control/Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -37.5
-offset_top = 8.0
-offset_right = 37.5
-offset_bottom = 39.0
-grow_horizontal = 2
-text = "Upgrade"
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -70.0
-offset_top = 50.0
-offset_right = 70.0
-offset_bottom = 73.0
-grow_horizontal = 2
-
-[node name="Upgradable_Levels" type="VBoxContainer" parent="Control/Panel/PanelContainer"]
-layout_mode = 2
-size_flags_vertical = 0
+[node name="Control" parent="." instance=ExtResource("3_3bgos")]

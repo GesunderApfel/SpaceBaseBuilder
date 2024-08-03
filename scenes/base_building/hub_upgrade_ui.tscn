@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqqcoaqrcw5pb"]
+
+[ext_resource type="Texture2D" uid="uid://b4gt5n31o3bki" path="res://assets/base_building_ui/СommonElement/BtnDefault.png" id="2_npfhw"]
+[ext_resource type="Texture2D" uid="uid://ldcii3m1a0bj" path="res://assets/base_building_ui/Elements/IconD04.png" id="3_pmk2a"]
+[ext_resource type="Texture2D" uid="uid://234uoc8h0two" path="res://assets/base_building_ui/Elements/IconD09.png" id="4_hcg3v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5vt6"]
+texture = ExtResource("2_npfhw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcd71"]
+texture = ExtResource("2_npfhw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fkebx"]
+texture = ExtResource("2_npfhw")
+modulate_color = Color(0.45098, 0.466667, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 22.14
+offset_top = 56.09
+offset_right = 22.14
+offset_bottom = 56.09
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 182.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_x5vt6")
+
+[node name="BuildingName" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 20.0
+offset_bottom = -13.0
+grow_horizontal = 2
+text = "Building Name"
+
+[node name="Button" type="Button" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 30.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_rcd71")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fkebx")
+text = "Buy"
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 30.0
+offset_bottom = 55.0
+grow_horizontal = 2
+texture_normal = ExtResource("3_pmk2a")
+texture_hover = ExtResource("4_hcg3v")
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_top = 77.91
+offset_right = 70.0
+offset_bottom = 100.91
+grow_horizontal = 2
+
+[node name="Upgradable_Levels" type="VBoxContainer" parent="Panel/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0

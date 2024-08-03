@@ -12,16 +12,17 @@ enum BuildingType{
 
 @onready var building_name_label = $Control/Panel/BuildingName
 @onready var upgradable_levels = $Control/Panel/PanelContainer/Upgradable_Levels
+@onready var texture_button = $Control/Panel/TextureButton
 
 
 const HUB_UPGRADABLE_LEVEL_UI = preload("res://scenes/base_building/hub_upgrade_level_ui.tscn")
+
 
 func _ready():
 	building_name_label.text = building_name
 	
 	var upgradable_level_ui = HUB_UPGRADABLE_LEVEL_UI.instantiate()
 	upgradable_level_ui.init_manually()
-	upgradable_level_ui.texture.texture = upgradable_container.attribute_icon
 	upgradable_level_ui.name_label.text = upgradable_container.attribute_name
 	
 	var current_level = 0
@@ -38,6 +39,14 @@ func _ready():
 		upgradables_list[current_level].cost
 	upgradable_level_ui.value_label = upgradable_container\
 		.upgradables_list[current_level].value
+	
+	
+	texture_button.texture_normal = upgradable_container.attribute_icon
+	if upgradable_container.is_buyable(current_level):
+		texture_button.texture_hover = upgradable_container.attribute_icon_sucess
+	else:
+		texture_button.texture_hover = upgradable_container.attribute_icon_failure
+	
 	
 	upgradable_levels.add_child(upgradable_level_ui)
 	

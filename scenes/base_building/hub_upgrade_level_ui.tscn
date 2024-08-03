@@ -5,10 +5,6 @@
 [node name="Upgradable_Level_UI" type="HBoxContainer"]
 script = ExtResource("1_e3fh4")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-expand_mode = 3
-
 [node name="NameLabel" type="Label" parent="."]
 layout_mode = 2
 text = "Resources"
