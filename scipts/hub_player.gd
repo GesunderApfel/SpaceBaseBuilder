@@ -1,0 +1,33 @@
+class_name hub extends Node
+
+
+const RAY_LENGTH = 1000.0
+
+var upgrade_health_ui;
+var upgrade_energy_ui;
+var upgrade_depot_ui;
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+		var space_state = get_tree().root.get_world_3d().direct_space_state
+		var camera3d = $Camera3D
+		var from = camera3d.project_ray_origin(event.position)
+		var to = from + camera3d.project_ray_normal(event.position) * RAY_LENGTH
+		var query = PhysicsRayQueryParameters3D.create(from, to)
+		
+		query.collide_with_areas = true
+		var result = space_state.intersect_ray(query)
+		
+		if result:
+			if result.collider.is_in_group("hub_upgrade_health"):
+				upgrade_health_ui.show()
+				upgrade_energy_ui.hide()
+				upgrade_depot_ui.hide()
+			elif result.collider.is_in_group("hub_upgrade_energy"):
+				upgrade_health_ui.hide()
+				upgrade_energy_ui.show()
+				upgrade_depot_ui.hide()
+			elif result.collider.is_in_group("hub_upgrade_energy"):
+				upgrade_health_ui.hide()
+				upgrade_energy_ui.hide()
+				upgrade_depot_ui.show()

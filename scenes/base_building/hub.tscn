@@ -1,6 +1,7 @@
-[gd_scene load_steps=65 format=3 uid="uid://bx4k4xeix4bul"]
+[gd_scene load_steps=69 format=3 uid="uid://bx4k4xeix4bul"]
 
 [ext_resource type="PackedScene" uid="uid://crixu15x7n00i" path="res://assets/gltf_files/windturbine_low.gltf" id="1_gmc3u"]
+[ext_resource type="Script" path="res://scipts/hub_player.gd" id="1_n4ovw"]
 [ext_resource type="PackedScene" uid="uid://bi5jhm3b1gtna" path="res://assets/gltf_files/windturbine_tall.gltf" id="2_wyl1g"]
 [ext_resource type="PackedScene" uid="uid://dxehb2s50wojm" path="res://assets/gltf_files/basemodule_A.gltf" id="3_biqyf"]
 [ext_resource type="PackedScene" uid="uid://qsmcq1v4ywik" path="res://assets/gltf_files/basemodule_B.gltf" id="4_66785"]
@@ -61,6 +62,12 @@
 [ext_resource type="Texture2D" uid="uid://ycujafw310sw" path="res://assets/gltf_files/smoke_04.png" id="59_p4xdv"]
 [ext_resource type="PackedScene" path="res://scenes/grass.tscn" id="60_cmlbp"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_02hrm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qlkue"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yxt2t"]
+
 [sub_resource type="Environment" id="Environment_pxtyh"]
 ambient_light_source = 2
 ambient_light_color = Color(0.374139, 0.374139, 0.374139, 1)
@@ -106,6 +113,7 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_3mmi7")
 
 [node name="BaseBuilderLevel" type="Node"]
+script = ExtResource("1_n4ovw")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.737454, 0.675398, 0, -0.675398, 0.737454, 0, 34.2567, 49.562)
@@ -300,16 +308,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, -11.9375, 0.127883, 4.72317)
 
 [node name="Level1" type="Node3D" parent="Level/Upgradable_Base"]
+visible = false
 
 [node name="basemodule_C3" parent="Level/Upgradable_Base/Level1" instance=ExtResource("5_ud78g")]
 transform = Transform3D(0.917866, 0, 0.396891, 0, 1, 0, -0.396891, 0, 0.917866, 16.7595, 0, 15.0478)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Upgradable_Base/Level1" groups=["hub_upgrade_health"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7883, 0.253896, 15.0584)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Base/Level1/StaticBody3D"]
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
+
 [node name="Level2" type="Node3D" parent="Level/Upgradable_Base"]
+visible = false
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Level/Upgradable_Base/Level2" groups=["hub_upgrade_health"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7883, 0.253896, 15.0584)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Base/Level2/StaticBody3D2"]
+transform = Transform3D(0.00240805, -4.20502, 1.72477, 4.545, -1.98668e-07, -0.006346, 0.00587138, 1.72478, 4.20501, 0.0247197, 0, -0.0101376)
+shape = SubResource("SphereShape3D_qlkue")
 
 [node name="basemodule_B3" parent="Level/Upgradable_Base/Level2" instance=ExtResource("4_66785")]
 transform = Transform3D(0.917866, 0, 0.396891, 0, 1, 0, -0.396891, 0, 0.917866, 16.746, 0, 15.0673)
 
 [node name="Level3" type="Node3D" parent="Level/Upgradable_Base"]
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Level/Upgradable_Base/Level3" groups=["hub_upgrade_health"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7883, 0.253896, 15.0584)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Base/Level3/StaticBody3D3"]
+transform = Transform3D(0.00240805, -4.20502, 1.72477, 4.545, -1.98668e-07, -0.006346, 0.00587138, 1.72478, 4.20501, 2.65111, 1.19209e-07, -1.08741)
+shape = SubResource("CapsuleShape3D_yxt2t")
 
 [node name="basemodule_garage3" parent="Level/Upgradable_Base/Level3" instance=ExtResource("8_0qaek")]
 transform = Transform3D(0.917866, 0, 0.396891, 0, 1, 0, -0.396891, 0, 0.917866, 21.8987, -0.000200033, 12.7742)
@@ -324,6 +355,7 @@ transform = Transform3D(0.368384, 0, 0.929675, 0, 1, 0, -0.929675, 0, 0.368384, 
 transform = Transform3D(0.917866, 0, 0.396891, 0, 1, 0, -0.396891, 0, 0.917866, 23.9448, 0, 13.4995)
 
 [node name="Level4" type="Node3D" parent="Level/Upgradable_Base"]
+visible = false
 
 [node name="basemodule_A3" parent="Level/Upgradable_Base/Level4" instance=ExtResource("3_biqyf")]
 transform = Transform3D(0.917866, 0, 0.396891, 0, 1, 0, -0.396891, 0, 0.917866, 14.9411, 0, 15.8808)
@@ -342,6 +374,13 @@ transform = Transform3D(0.917866, 0, 0.396891, 0, 1, 0, -0.396891, 0, 0.917866, 
 
 [node name="lights6" parent="Level/Upgradable_Base/Level4" instance=ExtResource("28_hb25o")]
 transform = Transform3D(0.917866, 0, 0.396891, 0, 1, 0, -0.396891, 0, 0.917866, 23.9448, 0, 13.4995)
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Level/Upgradable_Base/Level4" groups=["hub_upgrade_health"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7883, 0.253896, 15.0584)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Base/Level4/StaticBody3D4"]
+transform = Transform3D(0.00277363, -4.8434, 1.98662, 5.235, -2.28829e-07, -0.00730942, 0.00676274, 1.98662, 4.8434, 1.51167, 8.9407e-08, -0.620043)
+shape = SubResource("CapsuleShape3D_yxt2t")
 
 [node name="Level5" type="Node3D" parent="Level/Upgradable_Base"]
 
@@ -368,6 +407,13 @@ transform = Transform3D(0.993532, 0, -0.11355, 0, 1, 0, 0.11355, 0, 0.993532, 0.
 
 [node name="lights7" parent="Level/Upgradable_Base/Level5" instance=ExtResource("28_hb25o")]
 transform = Transform3D(0.993532, 0, -0.11355, 0, 1, 0, 0.11355, 0, 0.993532, -2.89103, 0, 16.2937)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Level/Upgradable_Base/Level5" groups=["hub_upgrade_health"]]
+transform = Transform3D(0.868286, 0, -0.496065, 0, 1, 0, 0.496065, 0, 0.868286, 1.21029, 0.253896, 16.4891)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Base/Level5/StaticBody3D5"]
+transform = Transform3D(0.00277363, -4.8434, 1.98662, 5.235, -2.28829e-07, -0.00730942, 0.00676274, 1.98662, 4.8434, 1.51167, 8.9407e-08, -0.620043)
+shape = SubResource("CapsuleShape3D_yxt2t")
 
 [node name="lights3" parent="Level/Upgradable_Base" instance=ExtResource("28_hb25o")]
 transform = Transform3D(0.993532, 0, -0.11355, 0, 1, 0, 0.11355, 0, 0.993532, 1.96308, 0, 17.8549)
