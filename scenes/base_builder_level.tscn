@@ -109,8 +109,10 @@ material = SubResource("StandardMaterial3D_3mmi7")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.737454, 0.675398, 0, -0.675398, 0.737454, 0, 34.2567, 49.562)
+projection = 1
 current = true
 fov = 35.0
+size = 33.432
 far = 400.0
 
 [node name="All Assets" type="Node3D" parent="."]
