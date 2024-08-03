@@ -1,9 +1,11 @@
-[gd_scene load_steps=69 format=3 uid="uid://bx4k4xeix4bul"]
+[gd_scene load_steps=78 format=3 uid="uid://bx4k4xeix4bul"]
 
 [ext_resource type="PackedScene" uid="uid://crixu15x7n00i" path="res://assets/gltf_files/windturbine_low.gltf" id="1_gmc3u"]
 [ext_resource type="Script" path="res://scipts/hub_player.gd" id="1_n4ovw"]
+[ext_resource type="PackedScene" uid="uid://dunfcjr06cb70" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_health_ui.tscn" id="2_cj5u1"]
 [ext_resource type="PackedScene" uid="uid://bi5jhm3b1gtna" path="res://assets/gltf_files/windturbine_tall.gltf" id="2_wyl1g"]
 [ext_resource type="PackedScene" uid="uid://dxehb2s50wojm" path="res://assets/gltf_files/basemodule_A.gltf" id="3_biqyf"]
+[ext_resource type="PackedScene" uid="uid://u01r3jsm8t8u" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_energy_ui.tscn" id="3_ofmlu"]
 [ext_resource type="PackedScene" uid="uid://qsmcq1v4ywik" path="res://assets/gltf_files/basemodule_B.gltf" id="4_66785"]
 [ext_resource type="PackedScene" uid="uid://40kags55e5ra" path="res://assets/gltf_files/basemodule_C.gltf" id="5_ud78g"]
 [ext_resource type="PackedScene" uid="uid://wjwcxcs8baxd" path="res://assets/gltf_files/basemodule_D.gltf" id="6_cv81p"]
@@ -61,6 +63,32 @@
 [ext_resource type="PackedScene" path="res://scenes/Ground.tscn" id="58_vjkuj"]
 [ext_resource type="Texture2D" uid="uid://ycujafw310sw" path="res://assets/gltf_files/smoke_04.png" id="59_p4xdv"]
 [ext_resource type="PackedScene" path="res://scenes/grass.tscn" id="60_cmlbp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qu2pc"]
+viewport_path = NodePath("UI3D/ViewportDepot")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaus1"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_qu2pc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_uiusi"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p4x1x"]
+viewport_path = NodePath("UI3D/ViewportEnergy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cp6f"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_p4x1x")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yvtul"]
+viewport_path = NodePath("UI3D/ViewportEnergy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vn2pu"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_yvtul")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_02hrm"]
 
@@ -122,6 +150,62 @@ current = true
 fov = 35.0
 size = 33.432
 far = 400.0
+
+[node name="UI3D" type="Node3D" parent="."]
+
+[node name="ViewportHealth" type="SubViewport" parent="UI3D"]
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="UI2D" type="Control" parent="UI3D/ViewportHealth"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HubUpgradeHealthUI" parent="UI3D/ViewportHealth/UI2D" instance=ExtResource("2_cj5u1")]
+layout_mode = 1
+
+[node name="ViewportEnergy" type="SubViewport" parent="UI3D"]
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="UI2D" type="Control" parent="UI3D/ViewportEnergy"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HubUpgradeEnergyUI" parent="UI3D/ViewportEnergy/UI2D" instance=ExtResource("3_ofmlu")]
+layout_mode = 1
+
+[node name="ViewportDepot" type="SubViewport" parent="UI3D"]
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="UI2D" type="Control" parent="UI3D/ViewportDepot"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HubUpgradeEnergyUI" parent="UI3D/ViewportDepot/UI2D" instance=ExtResource("3_ofmlu")]
+layout_mode = 1
+
+[node name="DepotGUI" type="MeshInstance3D" parent="UI3D"]
+transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, -10.741, 4.706, 20.413)
+material_override = SubResource("StandardMaterial3D_vaus1")
+mesh = SubResource("QuadMesh_uiusi")
+
+[node name="HealthGUI" type="MeshInstance3D" parent="UI3D"]
+transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, 13.304, 4.961, 20.413)
+material_override = SubResource("StandardMaterial3D_6cp6f")
+mesh = SubResource("QuadMesh_uiusi")
+
+[node name="EnergyGUI" type="MeshInstance3D" parent="UI3D"]
+transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, 2.279, 6.896, 10.163)
+material_override = SubResource("StandardMaterial3D_vn2pu")
+mesh = SubResource("QuadMesh_uiusi")
 
 [node name="All Assets" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.5041, 0, 0)
