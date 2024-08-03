@@ -1,0 +1,532 @@
+[gd_scene load_steps=58 format=3 uid="uid://bx4k4xeix4bul"]
+
+[ext_resource type="PackedScene" uid="uid://dxehb2s50wojm" path="res://assets/gltf_files/basemodule_A.gltf" id="1_wb77t"]
+[ext_resource type="PackedScene" uid="uid://qsmcq1v4ywik" path="res://assets/gltf_files/basemodule_B.gltf" id="2_16hla"]
+[ext_resource type="PackedScene" uid="uid://40kags55e5ra" path="res://assets/gltf_files/basemodule_C.gltf" id="3_ickp1"]
+[ext_resource type="PackedScene" uid="uid://wjwcxcs8baxd" path="res://assets/gltf_files/basemodule_D.gltf" id="4_0x2e2"]
+[ext_resource type="PackedScene" uid="uid://dv2i72uv8hkti" path="res://assets/gltf_files/basemodule_E.gltf" id="5_yuvcg"]
+[ext_resource type="PackedScene" uid="uid://b3u6gfum3v717" path="res://assets/gltf_files/basemodule_garage.gltf" id="6_b2m0u"]
+[ext_resource type="PackedScene" uid="uid://vmmqe1834eee" path="res://assets/gltf_files/cargodepot_A.gltf" id="7_d6mdx"]
+[ext_resource type="PackedScene" uid="uid://s20pr0ps4ml4" path="res://assets/gltf_files/cargodepot_B.gltf" id="8_q0igx"]
+[ext_resource type="PackedScene" uid="uid://i2vaeavn3go4" path="res://assets/gltf_files/cargodepot_C.gltf" id="9_t4jl1"]
+[ext_resource type="PackedScene" uid="uid://k2odpn3d0lst" path="res://assets/gltf_files/cargo_A.gltf" id="10_r7hxt"]
+[ext_resource type="PackedScene" uid="uid://cu8ucvodx7wbv" path="res://assets/gltf_files/cargo_A_packed.gltf" id="11_nr8h2"]
+[ext_resource type="PackedScene" uid="uid://ct4n806u5q22c" path="res://assets/gltf_files/cargo_B.gltf" id="12_4cpi4"]
+[ext_resource type="PackedScene" uid="uid://dnc3y2writdns" path="res://assets/gltf_files/cargo_B_packed.gltf" id="13_1mj4y"]
+[ext_resource type="PackedScene" uid="uid://it0ctu3dbkfl" path="res://assets/gltf_files/containers_A.gltf" id="14_jnde3"]
+[ext_resource type="PackedScene" uid="uid://dex37tklyd0qd" path="res://assets/gltf_files/containers_B.gltf" id="15_71u3o"]
+[ext_resource type="PackedScene" uid="uid://noyda3jsals5" path="res://assets/gltf_files/containers_C.gltf" id="16_nwewr"]
+[ext_resource type="PackedScene" uid="uid://bdi7s8oehtwxo" path="res://assets/gltf_files/containers_D.gltf" id="17_l23ap"]
+[ext_resource type="PackedScene" uid="uid://t2utuaeila1m" path="res://assets/gltf_files/drill_structure.gltf" id="18_2b7li"]
+[ext_resource type="PackedScene" uid="uid://b3qfflma66d2f" path="res://assets/gltf_files/lander_A.gltf" id="19_vdf0a"]
+[ext_resource type="PackedScene" uid="uid://rn1w8jfm2mrn" path="res://assets/gltf_files/lander_B.gltf" id="20_060fi"]
+[ext_resource type="PackedScene" uid="uid://bta5hnl3swd2a" path="res://assets/gltf_files/lander_base.gltf" id="21_dnl7a"]
+[ext_resource type="PackedScene" uid="uid://bski6j5e5uyqt" path="res://assets/gltf_files/landingpad_large.gltf" id="22_iwr20"]
+[ext_resource type="PackedScene" uid="uid://dwyv0umnhhfvo" path="res://assets/gltf_files/landingpad_small.gltf" id="23_72u7t"]
+[ext_resource type="PackedScene" uid="uid://dgxcg6dphon43" path="res://assets/gltf_files/lights.gltf" id="24_3keo6"]
+[ext_resource type="PackedScene" uid="uid://df4hkccqqxxtw" path="res://assets/gltf_files/rocks_A.gltf" id="25_r5iep"]
+[ext_resource type="PackedScene" uid="uid://c4ocfwllxqi8q" path="res://assets/gltf_files/rocks_B.gltf" id="26_awmc6"]
+[ext_resource type="PackedScene" uid="uid://biq8jvi1dxr74" path="res://assets/gltf_files/rock_A.gltf" id="27_ae5vd"]
+[ext_resource type="PackedScene" uid="uid://no21hf4p7qqj" path="res://assets/gltf_files/rock_B.gltf" id="28_t43fi"]
+[ext_resource type="PackedScene" uid="uid://ly16xuyo81t1" path="res://assets/gltf_files/roofmodule_base.gltf" id="29_w7o6f"]
+[ext_resource type="PackedScene" uid="uid://b5xndcbmq083b" path="res://assets/gltf_files/roofmodule_cargo_A.gltf" id="30_kq7d7"]
+[ext_resource type="PackedScene" uid="uid://2kvj274kk40n" path="res://assets/gltf_files/roofmodule_cargo_B.gltf" id="31_r2j72"]
+[ext_resource type="PackedScene" uid="uid://d3fkajhvg8lwx" path="res://assets/gltf_files/roofmodule_cargo_C.gltf" id="32_6yv85"]
+[ext_resource type="PackedScene" uid="uid://bo1ubyorvdpgb" path="res://assets/gltf_files/roofmodule_solarpanels.gltf" id="33_xay1r"]
+[ext_resource type="PackedScene" uid="uid://bo0ljodpfldfk" path="res://assets/gltf_files/solarpanel.gltf" id="34_vgf0u"]
+[ext_resource type="PackedScene" uid="uid://ds4i0686fd6ob" path="res://assets/gltf_files/spacetruck.gltf" id="35_pgcs4"]
+[ext_resource type="PackedScene" uid="uid://d2ariym1cpuew" path="res://assets/gltf_files/spacetruck_large.gltf" id="36_s7r5c"]
+[ext_resource type="PackedScene" uid="uid://cft8ya6cdt336" path="res://assets/gltf_files/spacetruck_trailer.gltf" id="37_stl3i"]
+[ext_resource type="PackedScene" uid="uid://bwvpop1vqc6fb" path="res://assets/gltf_files/structure_low.gltf" id="38_ci6qm"]
+[ext_resource type="PackedScene" uid="uid://dp8v1swckaymh" path="res://assets/gltf_files/structure_tall.gltf" id="39_lnxxh"]
+[ext_resource type="PackedScene" uid="uid://bstxcl3vmr82f" path="res://assets/gltf_files/terrain_low.gltf" id="40_rhiv6"]
+[ext_resource type="PackedScene" uid="uid://cbqolh8pbu3sx" path="res://assets/gltf_files/terrain_low_curved.gltf" id="41_5u311"]
+[ext_resource type="PackedScene" uid="uid://m0c3hjhaj7ob" path="res://assets/gltf_files/terrain_mining.gltf" id="42_pi75w"]
+[ext_resource type="PackedScene" uid="uid://xjue86tssa2p" path="res://assets/gltf_files/terrain_slope.gltf" id="43_8yjpk"]
+[ext_resource type="PackedScene" uid="uid://00sqxbeqjjh3" path="res://assets/gltf_files/terrain_slope_inner_corner.gltf" id="44_0y058"]
+[ext_resource type="PackedScene" uid="uid://dnlgtteiej5c8" path="res://assets/gltf_files/terrain_slope_outer_corner.gltf" id="45_uitml"]
+[ext_resource type="PackedScene" uid="uid://be74aow51smb2" path="res://assets/gltf_files/terrain_tall.gltf" id="46_h5ijd"]
+[ext_resource type="PackedScene" uid="uid://dk86ulthjv35d" path="res://assets/gltf_files/terrain_tall_curved.gltf" id="47_rmc7l"]
+[ext_resource type="PackedScene" uid="uid://c7fo8wytir06s" path="res://assets/gltf_files/tunnel_diagonal_long_A.gltf" id="48_ctovu"]
+[ext_resource type="PackedScene" uid="uid://ct5a4uw43jlew" path="res://assets/gltf_files/tunnel_diagonal_long_B.gltf" id="49_hxul7"]
+[ext_resource type="PackedScene" uid="uid://p5f48f8pca14" path="res://assets/gltf_files/tunnel_diagonal_short_A.gltf" id="50_5dlyt"]
+[ext_resource type="PackedScene" uid="uid://lochlnuvfet2" path="res://assets/gltf_files/tunnel_diagonal_short_B.gltf" id="51_emx0r"]
+[ext_resource type="PackedScene" uid="uid://b5vvwwhm21qk0" path="res://assets/gltf_files/tunnel_straight_A.gltf" id="52_tt0vh"]
+[ext_resource type="PackedScene" uid="uid://ry0vykb1gfcq" path="res://assets/gltf_files/tunnel_straight_B.gltf" id="53_45dag"]
+[ext_resource type="PackedScene" uid="uid://crixu15x7n00i" path="res://assets/gltf_files/windturbine_low.gltf" id="54_n5kas"]
+[ext_resource type="PackedScene" uid="uid://bi5jhm3b1gtna" path="res://assets/gltf_files/windturbine_tall.gltf" id="55_c02nd"]
+[ext_resource type="PackedScene" uid="uid://bhbom60cnsw8w" path="res://assets/gltf_files/cargo_A_stacked.gltf" id="56_ksjpt"]
+[ext_resource type="PackedScene" uid="uid://d2wr4iuirlq7n" path="res://assets/gltf_files/cargo_B_stacked.gltf" id="57_84h30"]
+
+[node name="BaseBuilderLevel" type="Node"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 1.5557, 71.1801, 95.4619)
+visible = false
+fov = 24.2
+
+[node name="GridMap" type="GridMap" parent="."]
+
+[node name="All Assets" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.5041, 0, 0)
+
+[node name="basemodule_A2" parent="All Assets" instance=ExtResource("1_wb77t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274757, 0, -12.9328)
+
+[node name="basemodule_B2" parent="All Assets" instance=ExtResource("2_16hla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274757, 0, -18.9328)
+
+[node name="basemodule_C2" parent="All Assets" instance=ExtResource("3_ickp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274328, 0, -27.3634)
+
+[node name="basemodule_D2" parent="All Assets" instance=ExtResource("4_0x2e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274757, 0, -15.9328)
+
+[node name="basemodule_E2" parent="All Assets" instance=ExtResource("5_yuvcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274757, 0, -9.84586)
+
+[node name="basemodule_garage2" parent="All Assets" instance=ExtResource("6_b2m0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274757, 0, -22.9328)
+
+[node name="cargodepot_A2" parent="All Assets" instance=ExtResource("7_d6mdx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -17.9328)
+
+[node name="cargodepot_B2" parent="All Assets" instance=ExtResource("8_q0igx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -20.9328)
+
+[node name="cargodepot_C2" parent="All Assets" instance=ExtResource("9_t4jl1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -23.9328)
+
+[node name="cargo_A2" parent="All Assets" instance=ExtResource("10_r7hxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7252, 0, -27.9328)
+
+[node name="cargo_A_packed2" parent="All Assets" instance=ExtResource("11_nr8h2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -27.9328)
+
+[node name="cargo_B2" parent="All Assets" instance=ExtResource("12_4cpi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -28.9328)
+
+[node name="cargo_B_packed2" parent="All Assets" instance=ExtResource("13_1mj4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7252, 0, -28.9328)
+
+[node name="containers_A2" parent="All Assets" instance=ExtResource("14_jnde3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -32.9328)
+
+[node name="containers_B2" parent="All Assets" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7252, 0, -34.9328)
+
+[node name="containers_C2" parent="All Assets" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -34.9328)
+
+[node name="containers_D2" parent="All Assets" instance=ExtResource("17_l23ap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7252, 0, -32.9328)
+
+[node name="drill_structure2" parent="All Assets" instance=ExtResource("18_2b7li")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7252, 0, -9.93285)
+
+[node name="lander_A2" parent="All Assets" instance=ExtResource("19_vdf0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7252, 0, -6.93285)
+
+[node name="lander_B2" parent="All Assets" instance=ExtResource("20_060fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7252, 0, -4.93285)
+
+[node name="lander_base2" parent="All Assets" instance=ExtResource("21_dnl7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7252, 0, -18.9328)
+
+[node name="landingpad_large2" parent="All Assets" instance=ExtResource("22_iwr20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7252, 0, -13.9328)
+
+[node name="landingpad_small2" parent="All Assets" instance=ExtResource("23_72u7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7252, 0, -9.93285)
+
+[node name="lights2" parent="All Assets" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72524, 0, -13.9328)
+
+[node name="rocks_A2" parent="All Assets" instance=ExtResource("25_r5iep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7252, 0, -5.93285)
+
+[node name="rocks_B2" parent="All Assets" instance=ExtResource("26_awmc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7252, 0, -9.93285)
+
+[node name="rock_A2" parent="All Assets" instance=ExtResource("27_ae5vd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7252, 0, -11.9328)
+
+[node name="rock_B2" parent="All Assets" instance=ExtResource("28_t43fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.7252, 0, -7.93285)
+
+[node name="roofmodule_base2" parent="All Assets" instance=ExtResource("29_w7o6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.274757, 0, -6.93285)
+
+[node name="roofmodule_cargo_A2" parent="All Assets" instance=ExtResource("30_kq7d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -12.9328)
+
+[node name="roofmodule_cargo_B2" parent="All Assets" instance=ExtResource("31_r2j72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -14.9328)
+
+[node name="roofmodule_cargo_C2" parent="All Assets" instance=ExtResource("32_6yv85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -10.9328)
+
+[node name="roofmodule_solarpanels2" parent="All Assets" instance=ExtResource("33_xay1r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -8.93285)
+
+[node name="solarpanel2" parent="All Assets" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7252, 0, -6.93285)
+
+[node name="spacetruck2" parent="All Assets" instance=ExtResource("35_pgcs4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72524, 0, -11.9328)
+
+[node name="spacetruck_large2" parent="All Assets" instance=ExtResource("36_s7r5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72524, 0, -9.93285)
+
+[node name="spacetruck_trailer2" parent="All Assets" instance=ExtResource("37_stl3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72524, 0, -13.9328)
+
+[node name="structure_low2" parent="All Assets" instance=ExtResource("38_ci6qm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7252, 0, -15.9328)
+
+[node name="structure_tall2" parent="All Assets" instance=ExtResource("39_lnxxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7252, 0, -12.9328)
+
+[node name="terrain_low2" parent="All Assets" instance=ExtResource("40_rhiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7252, 0, -15.9328)
+
+[node name="terrain_low_curved2" parent="All Assets" instance=ExtResource("41_5u311")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7252, 0, 2.06715)
+
+[node name="terrain_mining2" parent="All Assets" instance=ExtResource("42_pi75w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7252, 0, -18.9328)
+
+[node name="terrain_slope2" parent="All Assets" instance=ExtResource("43_8yjpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7252, 0, -12.9328)
+
+[node name="terrain_slope_inner_corner2" parent="All Assets" instance=ExtResource("44_0y058")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7252, 0, -9.93285)
+
+[node name="terrain_slope_outer_corner2" parent="All Assets" instance=ExtResource("45_uitml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7252, 0, -6.93285)
+
+[node name="terrain_tall2" parent="All Assets" instance=ExtResource("46_h5ijd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7252, 0, -3.93285)
+
+[node name="terrain_tall_curved2" parent="All Assets" instance=ExtResource("47_rmc7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7252, 0, -0.932847)
+
+[node name="tunnel_diagonal_long_A2" parent="All Assets" instance=ExtResource("48_ctovu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27476, 0, -17.9328)
+
+[node name="tunnel_diagonal_long_B2" parent="All Assets" instance=ExtResource("49_hxul7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27476, 0, -24.9328)
+
+[node name="tunnel_diagonal_short_A2" parent="All Assets" instance=ExtResource("50_5dlyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.27476, 0, -19.9328)
+
+[node name="tunnel_diagonal_short_B2" parent="All Assets" instance=ExtResource("51_emx0r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.27476, 0, -20.9328)
+
+[node name="tunnel_straight_A2" parent="All Assets" instance=ExtResource("52_tt0vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.27476, 0, -18.9328)
+
+[node name="tunnel_straight_B2" parent="All Assets" instance=ExtResource("53_45dag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27476, 0, -21.9328)
+
+[node name="windturbine_low3" parent="All Assets" instance=ExtResource("54_n5kas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72524, 0, -9.93285)
+
+[node name="windturbine_tall3" parent="All Assets" instance=ExtResource("55_c02nd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72524, 0, -11.9328)
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="Ground" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="terrain_tall8" parent="Level/Ground" instance=ExtResource("46_h5ijd")]
+transform = Transform3D(28, 0, 0, 0, 1, 0, 0, 0, 15.8123, 12, 0, 13)
+
+[node name="terrain_tall6" parent="Level/Ground" instance=ExtResource("46_h5ijd")]
+transform = Transform3D(14, 0, 0, 0, 1, 0, 0, 0, 8, -1.85285, 0, 36.7779)
+
+[node name="terrain_tall7" parent="Level/Ground" instance=ExtResource("46_h5ijd")]
+transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 3.2, 32.9397, 0, 31.8338)
+
+[node name="terrain_tall4" parent="Level/Ground" instance=ExtResource("46_h5ijd")]
+transform = Transform3D(10.08, 0, 0, 0, 1, 0, 0, 0, 7.371, 22, 2, 5.79282)
+
+[node name="terrain_tall5" parent="Level/Ground" instance=ExtResource("46_h5ijd")]
+transform = Transform3D(7.33691, 0, 0, 0, 0.999814, 0, 0, 0, 3.02344, 21, 3, 1.36344)
+
+[node name="Upgradable_Base" type="Node3D" parent="Level"]
+
+[node name="Level1" type="Node3D" parent="Level/Upgradable_Base"]
+
+[node name="basemodule_C3" parent="Level/Upgradable_Base/Level1" instance=ExtResource("3_ickp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7702, 0, 17.6366)
+
+[node name="Level2" type="Node3D" parent="Level/Upgradable_Base"]
+
+[node name="basemodule_B3" parent="Level/Upgradable_Base/Level2" instance=ExtResource("2_16hla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0, 17.6491)
+
+[node name="Level3" type="Node3D" parent="Level/Upgradable_Base"]
+
+[node name="basemodule_garage3" parent="Level/Upgradable_Base/Level3" instance=ExtResource("6_b2m0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3897, -0.000200033, 17.5894)
+
+[node name="basemodule_B4" parent="Level/Upgradable_Base/Level3" instance=ExtResource("2_16hla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0, 17.6491)
+
+[node name="tunnel_diagonal_long_A3" parent="Level/Upgradable_Base/Level3" instance=ExtResource("48_ctovu")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 22.5676, 0.0595673, 17.5575)
+
+[node name="lights4" parent="Level/Upgradable_Base/Level3" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9799, 0, 19.0672)
+
+[node name="Level4" type="Node3D" parent="Level/Upgradable_Base"]
+
+[node name="basemodule_A3" parent="Level/Upgradable_Base/Level4" instance=ExtResource("1_wb77t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7706, 0, 17.6794)
+
+[node name="basemodule_garage4" parent="Level/Upgradable_Base/Level4" instance=ExtResource("6_b2m0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3897, -0.000200033, 17.5894)
+
+[node name="basemodule_B5" parent="Level/Upgradable_Base/Level4" instance=ExtResource("2_16hla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0, 17.6491)
+
+[node name="tunnel_diagonal_long_A4" parent="Level/Upgradable_Base/Level4" instance=ExtResource("48_ctovu")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 22.5676, 0.0595673, 17.5575)
+
+[node name="lights5" parent="Level/Upgradable_Base/Level4" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9799, 0, 18.0672)
+
+[node name="lights6" parent="Level/Upgradable_Base/Level4" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9799, 0, 19.0672)
+
+[node name="Level5" type="Node3D" parent="Level/Upgradable_Base"]
+
+[node name="basemodule_E3" parent="Level/Upgradable_Base/Level5" instance=ExtResource("5_yuvcg")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 19.7445, 1, 15.7531)
+
+[node name="basemodule_D3" parent="Level/Upgradable_Base/Level5" instance=ExtResource("4_0x2e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7198, 0, 15.7343)
+
+[node name="lights5" parent="Level/Upgradable_Base/Level5" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9799, 0, 19.0672)
+
+[node name="basemodule_garage5" parent="Level/Upgradable_Base/Level5" instance=ExtResource("6_b2m0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3897, -0.000200033, 17.5894)
+
+[node name="tunnel_diagonal_long_A5" parent="Level/Upgradable_Base/Level5" instance=ExtResource("48_ctovu")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 22.5676, 0.0595673, 17.5575)
+
+[node name="basemodule_A4" parent="Level/Upgradable_Base/Level5" instance=ExtResource("1_wb77t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7706, 0, 17.6794)
+
+[node name="basemodule_B6" parent="Level/Upgradable_Base/Level5" instance=ExtResource("2_16hla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.75, 0, 17.6491)
+
+[node name="lights7" parent="Level/Upgradable_Base/Level5" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9799, 0, 18.0672)
+
+[node name="lights3" parent="Level/Upgradable_Base" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9799, 0, 19.0672)
+
+[node name="Upgradable_PowerStation" type="Node3D" parent="Level"]
+
+[node name="Level1" type="Node3D" parent="Level/Upgradable_PowerStation"]
+
+[node name="windturbine_low4" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("54_n5kas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7707, 2, 11.0672)
+
+[node name="windturbine_low5" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("54_n5kas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7707, 2, 11.0672)
+
+[node name="basemodule_C3" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("3_ickp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7702, 3, 0.6366)
+
+[node name="lights4" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9799, 3, 2.0672)
+
+[node name="lights5" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9799, 2, 7.0672)
+
+[node name="lights6" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2307, 2, 11.0672)
+
+[node name="lights7" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2307, 2, 7.0672)
+
+[node name="containers_B3" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0568, 3.10054, 0.79416)
+
+[node name="containers_B4" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0568, 3.10054, 0.259141)
+
+[node name="roofmodule_base3" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("29_w7o6f")]
+transform = Transform3D(1.44416, 0, 0, 0, 1, 0, 0, 0, 1.20727, 18.6797, 3, 0.494538)
+
+[node name="Level2" type="Node3D" parent="Level/Upgradable_PowerStation"]
+
+[node name="containers_B5" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0568, 3.29051, 0.79416)
+
+[node name="containers_B6" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0568, 3.29051, 0.259141)
+
+[node name="windturbine_low6" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("54_n5kas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7707, 2, 7.06715)
+
+[node name="windturbine_low7" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("54_n5kas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7707, 2, 7.06715)
+
+[node name="Level3" type="Node3D" parent="Level/Upgradable_PowerStation"]
+
+[node name="solarpanel3" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7707, 2, 7.15813)
+
+[node name="solarpanel4" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7707, 2, 6.55783)
+
+[node name="solarpanel5" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7707, 2, 11.4022)
+
+[node name="solarpanel6" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7707, 2, 10.8662)
+
+[node name="solarpanel7" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7707, 2, 11.4022)
+
+[node name="solarpanel8" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7707, 2, 10.8662)
+
+[node name="solarpanel9" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7707, 2, 7.15651)
+
+[node name="solarpanel10" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7707, 2, 6.55621)
+
+[node name="roofmodule_solarpanels3" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("33_xay1r")]
+transform = Transform3D(0.848528, 0, -0.919239, 0, 1, 0, 0.848528, 0, 0.919239, 20.7707, 4, 0.658718)
+
+[node name="containers_B7" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0568, 3.47499, 0.79416)
+
+[node name="containers_B8" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0568, 3.47499, 0.259141)
+
+[node name="Level4" type="Node3D" parent="Level/Upgradable_PowerStation"]
+
+[node name="solarpanel11" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7707, 2, 7.69674)
+
+[node name="solarpanel12" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7707, 2, 11.9358)
+
+[node name="solarpanel13" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7707, 2, 11.9358)
+
+[node name="solarpanel14" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("34_vgf0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7707, 2, 7.68746)
+
+[node name="containers_B9" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0568, 3.65619, 0.79416)
+
+[node name="containers_B10" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("15_71u3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0568, 3.65619, 0.259141)
+
+[node name="Level5" type="Node3D" parent="Level/Upgradable_PowerStation"]
+
+[node name="windturbine_tall4" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("55_c02nd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7707, 3, 2.0672)
+
+[node name="windturbine_tall5" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("55_c02nd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7707, 3, 2.0672)
+
+[node name="containers_C3" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2794, 3.10054, 0.771269)
+
+[node name="containers_C4" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2794, 3.10054, 0.274484)
+
+[node name="containers_C5" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2794, 3.28927, 0.771269)
+
+[node name="containers_C6" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2794, 3.28927, 0.274484)
+
+[node name="containers_C7" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2794, 3.47568, 0.771269)
+
+[node name="containers_C8" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2794, 3.47568, 0.274484)
+
+[node name="containers_C9" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2794, 3.64815, 0.771269)
+
+[node name="containers_C10" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("16_nwewr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2794, 3.64815, 0.274484)
+
+[node name="Upgradable_CargoDepot" type="Node3D" parent="Level"]
+
+[node name="Level1" type="Node3D" parent="Level/Upgradable_CargoDepot"]
+
+[node name="cargodepot_A3" parent="Level/Upgradable_CargoDepot/Level1" instance=ExtResource("7_d6mdx")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 31.7707, 0, 23.0672)
+
+[node name="lights6" parent="Level/Upgradable_CargoDepot/Level1" instance=ExtResource("24_3keo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4736, 0.0188894, 24.5965)
+
+[node name="Level2" type="Node3D" parent="Level/Upgradable_CargoDepot"]
+
+[node name="cargo_A3" parent="Level/Upgradable_CargoDepot/Level2" instance=ExtResource("10_r7hxt")]
+transform = Transform3D(0.81817, 0, -0.574977, 0, 1, 0, 0.574977, 0, 0.81817, 30.7277, 0, 21.8383)
+
+[node name="cargo_A_packed3" parent="Level/Upgradable_CargoDepot/Level2" instance=ExtResource("11_nr8h2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2188, 0.0114623, 21.3543)
+
+[node name="cargo_B3" parent="Level/Upgradable_CargoDepot/Level2" instance=ExtResource("12_4cpi4")]
+transform = Transform3D(0.81817, 0, -0.574977, 0, 1, 0, 0.574977, 0, 0.81817, 30.9817, 0, 21.4581)
+
+[node name="cargo_B_packed3" parent="Level/Upgradable_CargoDepot/Level2" instance=ExtResource("13_1mj4y")]
+transform = Transform3D(0.588491, 0, 0.808504, 0, 1, 0, -0.808504, 0, 0.588491, 30.9839, 0.479353, 21.4228)
+
+[node name="Level3" type="Node3D" parent="Level/Upgradable_CargoDepot"]
+
+[node name="cargodepot_C3" parent="Level/Upgradable_CargoDepot/Level3" instance=ExtResource("9_t4jl1")]
+transform = Transform3D(-0.074202, -0.00178831, -0.997242, -0.000115828, 0.999998, -0.00178463, 0.997243, -1.69039e-05, -0.0742021, 32.9636, 0, 26.3063)
+
+[node name="Level4" type="Node3D" parent="Level/Upgradable_CargoDepot"]
+
+[node name="cargo_A_stacked2" parent="Level/Upgradable_CargoDepot/Level4" instance=ExtResource("56_ksjpt")]
+transform = Transform3D(0.981551, 0, 0.191203, 0, 1, 0, -0.191203, 0, 0.981551, 35.8586, 0, 26.9808)
+
+[node name="cargo_B_stacked2" parent="Level/Upgradable_CargoDepot/Level4" instance=ExtResource("57_84h30")]
+transform = Transform3D(0.981551, 0, 0.191203, 0, 1, 0, -0.191203, 0, 0.981551, 34.8771, 0, 27.172)
+
+[node name="cargo_A_stacked3" parent="Level/Upgradable_CargoDepot/Level4" instance=ExtResource("56_ksjpt")]
+transform = Transform3D(0.981551, 0, 0.191203, 0, 1, 0, -0.191203, 0, 0.981551, 36.0498, 0, 27.9624)
+
+[node name="cargo_B_stacked3" parent="Level/Upgradable_CargoDepot/Level4" instance=ExtResource("57_84h30")]
+transform = Transform3D(0.981551, 0, 0.191203, 0, 1, 0, -0.191203, 0, 0.981551, 35.0683, 0, 28.1536)
+
+[node name="cargo_A_packed4" parent="Level/Upgradable_CargoDepot/Level4" instance=ExtResource("11_nr8h2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8245, 0.0114623, 28.4038)
+
+[node name="cargo_B_packed4" parent="Level/Upgradable_CargoDepot/Level4" instance=ExtResource("13_1mj4y")]
+transform = Transform3D(0.588491, 0, 0.808504, 0, 1, 0, -0.808504, 0, 0.588491, 33.2535, 0.0192524, 27.9683)
+
+[node name="Level5" type="Node3D" parent="Level/Upgradable_CargoDepot"]
+
+[node name="cargodepot_B3" parent="Level/Upgradable_CargoDepot/Level5" instance=ExtResource("8_q0igx")]
+transform = Transform3D(-0.0709055, 0, -0.997483, 0, 1, 0, 0.997483, 0, -0.0709055, 36.4856, 0, 22.9183)
+
+[node name="tunnel_diagonal_short_A3" parent="Level/Upgradable_CargoDepot/Level5" instance=ExtResource("50_5dlyt")]
+transform = Transform3D(0.332029, 0, 0.943269, 0, 1, 0, -0.943269, 0, 0.332029, 33.236, 0, 22.7973)
+
+[node name="tunnel_straight_A3" parent="Level/Upgradable_CargoDepot/Level5" instance=ExtResource("52_tt0vh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5104, 0, 22.604)
+
+[node name="roofmodule_cargo_A3" parent="Level/Upgradable_CargoDepot/Level5" instance=ExtResource("30_kq7d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.16, 0, 25.0672)
+
+[node name="roofmodule_cargo_B3" parent="Level/Upgradable_CargoDepot/Level5" instance=ExtResource("31_r2j72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7707, 0, 25.0672)

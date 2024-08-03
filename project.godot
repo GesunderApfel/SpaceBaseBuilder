@@ -14,6 +14,10 @@ config/name="SpaceBaseBuilder"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/base_building/icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
