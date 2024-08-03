@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UpgradableHubLevel" load_steps=2 format=3 uid="uid://cse6jkore7slo"]
+
+[ext_resource type="Script" path="res://scipts/upgradable_hub_level.gd" id="1_kkm0k"]
+
+[resource]
+script = ExtResource("1_kkm0k")
+level = 4
+cost = 500
+value = 70

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradableHubContainer" load_steps=8 format=3 uid="uid://d3ragf7iem2u5"]
+
+[ext_resource type="Script" path="res://scipts/upgradable_hub_container.gd" id="1_van5x"]
+[ext_resource type="Resource" uid="uid://de02njcmjqim8" path="res://resources/upgradable_hub/energy/upgrade_hub_energy_0.tres" id="2_5vjyk"]
+[ext_resource type="Resource" uid="uid://dcdyysrq6nnu5" path="res://resources/upgradable_hub/energy/upgrade_hub_energy_1.tres" id="3_gxykf"]
+[ext_resource type="Resource" uid="uid://bblbgq1hw1u00" path="res://resources/upgradable_hub/energy/upgrade_hub_energy_2.tres" id="4_dkjom"]
+[ext_resource type="Resource" uid="uid://ca8jdxe0onack" path="res://resources/upgradable_hub/energy/upgrade_hub_energy_3.tres" id="5_bhsln"]
+[ext_resource type="Resource" uid="uid://cse6jkore7slo" path="res://resources/upgradable_hub/energy/upgrade_hub_energy_4.tres" id="6_illof"]
+[ext_resource type="Resource" uid="uid://bt63rn8mei6su" path="res://resources/upgradable_hub/energy/upgrade_hub_energy_5.tres" id="7_bva5j"]
+
+[resource]
+script = ExtResource("1_van5x")
+attribute_name = "Energy"
+upgradables_list = Array[Resource("res://scipts/upgradable_hub_level.gd")]([ExtResource("2_5vjyk"), ExtResource("3_gxykf"), ExtResource("4_dkjom"), ExtResource("5_bhsln"), ExtResource("6_illof"), ExtResource("7_bva5j")])

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dunfcjr06cb70"]
+[gd_scene load_steps=4 format=3 uid="uid://dunfcjr06cb70"]
 
-[ext_resource type="Script" path="res://scipts/upgradable_hub_ui.gd" id="1_qq210"]
-[ext_resource type="Texture2D" uid="uid://ldcii3m1a0bj" path="res://assets/base_building_ui/Elements/IconD04.png" id="2_ut5aw"]
+[ext_resource type="Script" path="res://scipts/upgradable_hub_ui.gd" id="1_rljbk"]
+[ext_resource type="Resource" uid="uid://bi0s32o5k3nmv" path="res://resources/upgradable_hub/upgradable_container_health.tres" id="2_uc7xd"]
+[ext_resource type="Texture2D" uid="uid://ldcii3m1a0bj" path="res://assets/base_building_ui/Elements/IconD04.png" id="3_l2jga"]
 
 [node name="BaseUpgradeUI" type="Control"]
 layout_mode = 3
@@ -10,10 +11,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qq210")
+script = ExtResource("1_rljbk")
+building_name = "Base"
+upgradable_container = ExtResource("2_uc7xd")
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
+offset_left = 22.14
+offset_top = 56.09
+offset_right = 22.14
+offset_bottom = 56.09
 
 [node name="Panel" type="Panel" parent="Control"]
 layout_mode = 1
@@ -69,7 +76,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Panel/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_ut5aw")
+texture = ExtResource("3_l2jga")
 expand_mode = 3
 
 [node name="AttributeLabel" type="Label" parent="Control/Panel/PanelContainer/VBoxContainer/HBoxContainer"]
