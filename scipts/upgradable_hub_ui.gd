@@ -50,7 +50,7 @@ func _ready():
 	
 	upgradable_levels.add_child(upgradable_level_ui)
 	
-	debug_log_all_upgradables()
+	#debug_log_all_upgradables()
 	pass
 
 func debug_log_all_upgradables():

@@ -7,6 +7,12 @@ var upgrade_health_ui;
 var upgrade_energy_ui;
 var upgrade_depot_ui;
 
+signal on_clicked_upgrade_health
+signal on_clicked_upgrade_energy
+signal on_clicked_upgrade_depot
+
+@onready var upgradable_base = $Level/Upgradable_Base
+
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
 		var space_state = get_tree().root.get_world_3d().direct_space_state
@@ -31,3 +37,9 @@ func _input(event):
 				upgrade_health_ui.hide()
 				upgrade_energy_ui.hide()
 				upgrade_depot_ui.show()
+			elif result.collider.is_in_group("ui_health_upgrade_button"):
+				on_clicked_upgrade_health.emit()
+			elif result.collider.is_in_group("ui_energy_upgrade_button"):
+				on_clicked_upgrade_energy.emit()
+			elif result.collider.is_in_group("ui_depot_upgrade_button"):
+				on_clicked_upgrade_depot.emit()

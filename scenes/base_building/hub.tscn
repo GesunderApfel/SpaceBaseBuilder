@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bx4k4xeix4bul"]
+[gd_scene load_steps=80 format=3 uid="uid://bx4k4xeix4bul"]
 
 [ext_resource type="PackedScene" uid="uid://crixu15x7n00i" path="res://assets/gltf_files/windturbine_low.gltf" id="1_gmc3u"]
 [ext_resource type="Script" path="res://scipts/hub_player.gd" id="1_n4ovw"]
@@ -63,32 +63,36 @@
 [ext_resource type="PackedScene" path="res://scenes/Ground.tscn" id="58_vjkuj"]
 [ext_resource type="Texture2D" uid="uid://ycujafw310sw" path="res://assets/gltf_files/smoke_04.png" id="59_p4xdv"]
 [ext_resource type="PackedScene" path="res://scenes/grass.tscn" id="60_cmlbp"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_qu2pc"]
-viewport_path = NodePath("UI3D/ViewportDepot")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaus1"]
-resource_local_to_scene = true
-transparency = 1
-albedo_texture = SubResource("ViewportTexture_qu2pc")
-
-[sub_resource type="QuadMesh" id="QuadMesh_uiusi"]
+[ext_resource type="Script" path="res://scipts/hub_upgrade_visualizer.gd" id="62_aq1wv"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_p4x1x"]
-viewport_path = NodePath("UI3D/ViewportEnergy")
+viewport_path = NodePath("GUI_3D/Upgrade_Energy/ViewportEnergy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cp6f"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = SubResource("ViewportTexture_p4x1x")
 
+[sub_resource type="QuadMesh" id="QuadMesh_uiusi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j0135"]
+size = Vector3(0.939941, 1, 1)
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_yvtul"]
-viewport_path = NodePath("UI3D/ViewportEnergy")
+viewport_path = NodePath("GUI_3D/Upgrade_Energy/ViewportEnergy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vn2pu"]
 resource_local_to_scene = true
 transparency = 1
 albedo_texture = SubResource("ViewportTexture_yvtul")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_qu2pc"]
+viewport_path = NodePath("GUI_3D/Upgrade_Depot/ViewportDepot")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaus1"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_qu2pc")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_02hrm"]
 
@@ -151,61 +155,88 @@ fov = 35.0
 size = 33.432
 far = 400.0
 
-[node name="UI3D" type="Node3D" parent="."]
+[node name="GUI_3D" type="Node3D" parent="."]
 
-[node name="ViewportHealth" type="SubViewport" parent="UI3D"]
+[node name="Upgrade_Health" type="Node3D" parent="GUI_3D"]
+
+[node name="ViewportHealth" type="SubViewport" parent="GUI_3D/Upgrade_Health"]
 transparent_bg = true
 size = Vector2i(256, 256)
 
-[node name="UI2D" type="Control" parent="UI3D/ViewportHealth"]
+[node name="UI2D" type="Control" parent="GUI_3D/Upgrade_Health/ViewportHealth"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HubUpgradeHealthUI" parent="UI3D/ViewportHealth/UI2D" instance=ExtResource("2_cj5u1")]
+[node name="HubUpgradeHealthUI" parent="GUI_3D/Upgrade_Health/ViewportHealth/UI2D" instance=ExtResource("2_cj5u1")]
 layout_mode = 1
 
-[node name="ViewportEnergy" type="SubViewport" parent="UI3D"]
-transparent_bg = true
-size = Vector2i(256, 256)
-
-[node name="UI2D" type="Control" parent="UI3D/ViewportEnergy"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HubUpgradeEnergyUI" parent="UI3D/ViewportEnergy/UI2D" instance=ExtResource("3_ofmlu")]
-layout_mode = 1
-
-[node name="ViewportDepot" type="SubViewport" parent="UI3D"]
-transparent_bg = true
-size = Vector2i(256, 256)
-
-[node name="UI2D" type="Control" parent="UI3D/ViewportDepot"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HubUpgradeEnergyUI" parent="UI3D/ViewportDepot/UI2D" instance=ExtResource("3_ofmlu")]
-layout_mode = 1
-
-[node name="DepotGUI" type="MeshInstance3D" parent="UI3D"]
-transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, -10.741, 4.706, 20.413)
-material_override = SubResource("StandardMaterial3D_vaus1")
-mesh = SubResource("QuadMesh_uiusi")
-
-[node name="HealthGUI" type="MeshInstance3D" parent="UI3D"]
+[node name="HealthGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Health"]
 transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, 13.304, 4.961, 20.413)
 material_override = SubResource("StandardMaterial3D_6cp6f")
 mesh = SubResource("QuadMesh_uiusi")
+skeleton = NodePath("../..")
 
-[node name="EnergyGUI" type="MeshInstance3D" parent="UI3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GUI_3D/Upgrade_Health" groups=["ui_health_upgrade_button"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI_3D/Upgrade_Health/StaticBody3D"]
+transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459, 11.5345, 7.25769, 18.3816)
+shape = SubResource("BoxShape3D_j0135")
+
+[node name="Upgrade_Energy" type="Node3D" parent="GUI_3D"]
+
+[node name="EnergyGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Energy"]
 transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, 2.279, 6.896, 10.163)
 material_override = SubResource("StandardMaterial3D_vn2pu")
 mesh = SubResource("QuadMesh_uiusi")
+skeleton = NodePath("../..")
+
+[node name="ViewportEnergy" type="SubViewport" parent="GUI_3D/Upgrade_Energy"]
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="UI2D" type="Control" parent="GUI_3D/Upgrade_Energy/ViewportEnergy"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HubUpgradeEnergyUI" parent="GUI_3D/Upgrade_Energy/ViewportEnergy/UI2D" instance=ExtResource("3_ofmlu")]
+layout_mode = 1
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="GUI_3D/Upgrade_Energy" groups=["ui_energy_upgrade_button"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI_3D/Upgrade_Energy/StaticBody3D2"]
+transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459, 0.534609, 9.10416, 8.28982)
+shape = SubResource("BoxShape3D_j0135")
+
+[node name="Upgrade_Depot" type="Node3D" parent="GUI_3D"]
+
+[node name="ViewportDepot" type="SubViewport" parent="GUI_3D/Upgrade_Depot"]
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="UI2D" type="Control" parent="GUI_3D/Upgrade_Depot/ViewportDepot"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HubUpgradeEnergyUI" parent="GUI_3D/Upgrade_Depot/ViewportDepot/UI2D" instance=ExtResource("3_ofmlu")]
+layout_mode = 1
+
+[node name="DepotGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Depot"]
+transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, -10.741, 4.706, 20.413)
+material_override = SubResource("StandardMaterial3D_vaus1")
+mesh = SubResource("QuadMesh_uiusi")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="GUI_3D/Upgrade_Depot" groups=["ui_depot_upgrade_button"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI_3D/Upgrade_Depot/StaticBody3D3"]
+transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459, -12.4088, 7.25769, 18.3816)
+shape = SubResource("BoxShape3D_j0135")
 
 [node name="All Assets" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.5041, 0, 0)
@@ -390,6 +421,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Upgradable_Base" type="Node3D" parent="Level"]
 transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, -11.9375, 0.127883, 4.72317)
+script = ExtResource("62_aq1wv")
 
 [node name="Level1" type="Node3D" parent="Level/Upgradable_Base"]
 visible = false
@@ -504,6 +536,9 @@ transform = Transform3D(0.993532, 0, -0.11355, 0, 1, 0, 0.11355, 0, 0.993532, 1.
 
 [node name="Upgradable_PowerStation" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02252, -5.46228)
+script = ExtResource("62_aq1wv")
+upgrade_type = 1
+building_type = 1
 
 [node name="Level1" type="Node3D" parent="Level/Upgradable_PowerStation"]
 
