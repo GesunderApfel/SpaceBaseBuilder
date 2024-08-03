@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dunfcjr06cb70"]
+[gd_scene load_steps=3 format=3 uid="uid://dunfcjr06cb70"]
 
 [ext_resource type="Script" path="res://scipts/upgradable_hub_ui.gd" id="1_rljbk"]
 [ext_resource type="Resource" uid="uid://bi0s32o5k3nmv" path="res://resources/upgradable_hub/upgradable_container_health.tres" id="2_uc7xd"]
-[ext_resource type="Texture2D" uid="uid://ldcii3m1a0bj" path="res://assets/base_building_ui/Elements/IconD04.png" id="3_l2jga"]
 
 [node name="BaseUpgradeUI" type="Control"]
 layout_mode = 3
@@ -42,7 +41,7 @@ offset_top = -36.0
 offset_right = 20.0
 offset_bottom = -13.0
 grow_horizontal = 2
-text = "Base"
+text = "Building Name"
 
 [node name="Button" type="Button" parent="Control/Panel"]
 layout_mode = 1
@@ -67,22 +66,21 @@ offset_right = 70.0
 offset_bottom = 73.0
 grow_horizontal = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/PanelContainer"]
+[node name="Upgradable_Levels" type="VBoxContainer" parent="Control/Panel/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/PanelContainer/Upgradable_Levels"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/Panel/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/PanelContainer/Upgradable_Levels/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_l2jga")
 expand_mode = 3
 
-[node name="AttributeLabel" type="Label" parent="Control/Panel/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="AttributeLabel" type="Label" parent="Control/Panel/PanelContainer/Upgradable_Levels/HBoxContainer"]
 layout_mode = 2
 text = "Resources"
 
-[node name="AttributeValue" type="Label" parent="Control/Panel/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="AttributeValue" type="Label" parent="Control/Panel/PanelContainer/Upgradable_Levels/HBoxContainer"]
 layout_mode = 2
 text = "20"

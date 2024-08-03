@@ -57,9 +57,9 @@
 [ext_resource type="PackedScene" uid="uid://lochlnuvfet2" path="res://assets/gltf_files/tunnel_diagonal_short_B.gltf" id="55_051ww"]
 [ext_resource type="PackedScene" uid="uid://b5vvwwhm21qk0" path="res://assets/gltf_files/tunnel_straight_A.gltf" id="56_10cqk"]
 [ext_resource type="PackedScene" uid="uid://ry0vykb1gfcq" path="res://assets/gltf_files/tunnel_straight_B.gltf" id="57_ou57b"]
-[ext_resource type="PackedScene" uid="uid://ba3qf08kkdwy6" path="res://scenes/Ground.tscn" id="58_vjkuj"]
+[ext_resource type="PackedScene" path="res://scenes/Ground.tscn" id="58_vjkuj"]
 [ext_resource type="Texture2D" uid="uid://ycujafw310sw" path="res://assets/gltf_files/smoke_04.png" id="59_p4xdv"]
-[ext_resource type="PackedScene" uid="uid://d4asupalddx63" path="res://scenes/grass.tscn" id="60_cmlbp"]
+[ext_resource type="PackedScene" path="res://scenes/grass.tscn" id="60_cmlbp"]
 
 [sub_resource type="Environment" id="Environment_pxtyh"]
 ambient_light_source = 2
