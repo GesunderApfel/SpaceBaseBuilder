@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://4bbucyifotmq"]
+[gd_scene load_steps=3 format=3 uid="uid://dunfcjr06cb70"]
 
-[ext_resource type="Texture2D" uid="uid://ldcii3m1a0bj" path="res://assets/base_building_ui/Elements/IconD04.png" id="1_4e103"]
+[ext_resource type="Script" path="res://scipts/upgradable_hub_ui.gd" id="1_qq210"]
+[ext_resource type="Texture2D" uid="uid://ldcii3m1a0bj" path="res://assets/base_building_ui/Elements/IconD04.png" id="2_ut5aw"]
 
 [node name="BaseUpgradeUI" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qq210")
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
@@ -22,6 +24,18 @@ offset_right = 182.0
 offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BuildingName" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = -36.0
+offset_right = 20.0
+offset_bottom = -13.0
+grow_horizontal = 2
+text = "Base"
 
 [node name="Button" type="Button" parent="Control/Panel"]
 layout_mode = 1
@@ -55,7 +69,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control/Panel/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_4e103")
+texture = ExtResource("2_ut5aw")
 expand_mode = 3
 
 [node name="AttributeLabel" type="Label" parent="Control/Panel/PanelContainer/VBoxContainer/HBoxContainer"]

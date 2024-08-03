@@ -1,11 +1,8 @@
-extends Node
+class_name upgradable_hub_container extends Resource
 
+@export var base_building : Array[Resource] = []	
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var current_levent = 0
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func upgrade():
 	pass
