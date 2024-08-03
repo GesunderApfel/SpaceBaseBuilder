@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://bx4k4xeix4bul"]
+[gd_scene load_steps=81 format=3 uid="uid://bx4k4xeix4bul"]
 
 [ext_resource type="PackedScene" uid="uid://crixu15x7n00i" path="res://assets/gltf_files/windturbine_low.gltf" id="1_gmc3u"]
 [ext_resource type="Script" path="res://scipts/hub_player.gd" id="1_n4ovw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bi5jhm3b1gtna" path="res://assets/gltf_files/windturbine_tall.gltf" id="2_wyl1g"]
 [ext_resource type="PackedScene" uid="uid://dxehb2s50wojm" path="res://assets/gltf_files/basemodule_A.gltf" id="3_biqyf"]
 [ext_resource type="PackedScene" uid="uid://u01r3jsm8t8u" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_energy_ui.tscn" id="3_ofmlu"]
+[ext_resource type="PackedScene" uid="uid://n8lwfc6gp6ir" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_depot_ui.tscn" id="4_1y3i2"]
 [ext_resource type="PackedScene" uid="uid://qsmcq1v4ywik" path="res://assets/gltf_files/basemodule_B.gltf" id="4_66785"]
 [ext_resource type="PackedScene" uid="uid://40kags55e5ra" path="res://assets/gltf_files/basemodule_C.gltf" id="5_ud78g"]
 [ext_resource type="PackedScene" uid="uid://wjwcxcs8baxd" path="res://assets/gltf_files/basemodule_D.gltf" id="6_cv81p"]
@@ -66,7 +67,7 @@
 [ext_resource type="Script" path="res://scipts/hub_upgrade_visualizer.gd" id="62_aq1wv"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_p4x1x"]
-viewport_path = NodePath("GUI_3D/Upgrade_Energy/ViewportEnergy")
+viewport_path = NodePath("GUI_3D/Upgrade_Health/ViewportHealth")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cp6f"]
 resource_local_to_scene = true
@@ -170,6 +171,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HubUpgradeHealthUI" parent="GUI_3D/Upgrade_Health/ViewportHealth/UI2D" instance=ExtResource("2_cj5u1")]
+visible = false
 layout_mode = 1
 
 [node name="HealthGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Health"]
@@ -203,6 +205,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HubUpgradeEnergyUI" parent="GUI_3D/Upgrade_Energy/ViewportEnergy/UI2D" instance=ExtResource("3_ofmlu")]
+visible = false
 layout_mode = 1
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="GUI_3D/Upgrade_Energy" groups=["ui_energy_upgrade_button"]]
@@ -223,7 +226,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HubUpgradeEnergyUI" parent="GUI_3D/Upgrade_Depot/ViewportDepot/UI2D" instance=ExtResource("3_ofmlu")]
+[node name="HubUpgradeDepotUI" parent="GUI_3D/Upgrade_Depot/ViewportDepot/UI2D" instance=ExtResource("4_1y3i2")]
+visible = false
 layout_mode = 1
 
 [node name="DepotGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Depot"]
@@ -572,6 +576,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.10054, 0.259141)
 [node name="roofmodule_base3" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("33_jfunm")]
 transform = Transform3D(1.44416, 0, 0, 0, 1, 0, 0, 0, 1.20727, -0.165911, 3, 0.494538)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/Upgradable_PowerStation/Level1" groups=["hub_upgrade_energy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95264, 3.30767, 0.572824)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_PowerStation/Level1/StaticBody3D"]
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
+
 [node name="Level2" type="Node3D" parent="Level/Upgradable_PowerStation"]
 
 [node name="containers_B5" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("19_ucali")]
@@ -699,3 +710,10 @@ transform = Transform3D(0.750446, 0, 0.660932, 0, 1, 0, -0.660932, 0, 0.750446, 
 
 [node name="Grass4" parent="." instance=ExtResource("60_cmlbp")]
 transform = Transform3D(0.750446, 0, 0.660932, 0, 1, 0, -0.660932, 0, 0.750446, 20.4555, 0, 26.3331)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Currency" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Currency: "

@@ -26,13 +26,13 @@ var current_level = 0
 
 func _ready():
 	
-	levels[0] = level_1
-	levels[1] = level_2
-	levels[2] = level_3
-	levels[3] = level_4
-	levels[4] = level_5
-		
-	var current_level = 0
+	levels.append(level_1)
+	levels.append(level_2)
+	levels.append(level_3)
+	levels.append(level_4)
+	levels.append(level_5)
+	
+	#hide_all()
 	
 	match building_type:
 		BuildingType.BASE:
@@ -42,10 +42,11 @@ func _ready():
 		BuildingType.DEPOT:
 			current_level = HubState.hub_depot_level
 		
-	for i in current_level:
-		upgrade()
 	
-	
+func hide_all():
+	for i in levels:
+		i.hide()
+
 func upgrade():
 	if upgrade_type == UpgradeType.ADDITIONAL:
 		levels[current_level].show()

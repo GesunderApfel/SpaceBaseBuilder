@@ -17,14 +17,23 @@ enum BuildingType{
 
 const HUB_UPGRADABLE_LEVEL_UI = preload("res://scenes/base_building/hub_upgrade_level_ui.tscn")
 
+var upgradable_level_ui
 
 func _ready():
 	building_name_label.text = building_name
 	
-	var upgradable_level_ui = HUB_UPGRADABLE_LEVEL_UI.instantiate()
+	upgradable_level_ui = HUB_UPGRADABLE_LEVEL_UI.instantiate()
 	upgradable_level_ui.init_manually()
 	upgradable_level_ui.name_label.text = upgradable_container.attribute_name
 	
+	update_ui()
+	
+	upgradable_levels.add_child(upgradable_level_ui)
+	
+	#debug_log_all_upgradables()
+	pass
+
+func update_ui():
 	var current_level = 0
 	
 	match building_type:
@@ -35,10 +44,15 @@ func _ready():
 		BuildingType.DEPOT:
 			current_level = HubState.hub_depot_level
 	
-	upgradable_level_ui.cost_label = upgradable_container.\
-		upgradables_list[current_level].cost
-	upgradable_level_ui.value_label = upgradable_container\
-		.upgradables_list[current_level].value
+	if current_level > 5:
+		self.hide()
+		return
+	
+	
+	upgradable_level_ui.cost_label.text = str(upgradable_container.\
+		upgradables_list[current_level].cost)
+	upgradable_level_ui.value_label.text = str(upgradable_container\
+		.upgradables_list[current_level].value)
 	
 	
 	texture_button.texture_normal = upgradable_container.attribute_icon
@@ -46,12 +60,6 @@ func _ready():
 		texture_button.texture_hover = upgradable_container.attribute_icon_sucess
 	else:
 		texture_button.texture_hover = upgradable_container.attribute_icon_failure
-	
-	
-	upgradable_levels.add_child(upgradable_level_ui)
-	
-	#debug_log_all_upgradables()
-	pass
 
 func debug_log_all_upgradables():
 	for c in upgradable_container.upgradables_list:
