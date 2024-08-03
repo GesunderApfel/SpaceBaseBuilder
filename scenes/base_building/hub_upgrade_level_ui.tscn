@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ubkj4six2py2"]
 
-[ext_resource type="Script" path="res://scipts/upgradable_level_ui.gd" id="1_bmbex"]
+[ext_resource type="Script" path="res://scipts/upgradable_level_ui.gd" id="1_e3fh4"]
 
 [node name="Upgradable_Level_UI" type="HBoxContainer"]
-script = ExtResource("1_bmbex")
+script = ExtResource("1_e3fh4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
