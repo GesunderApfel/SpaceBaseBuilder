@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scipts/upgradable_hub_ui.gd" id="1_rljbk"]
 [ext_resource type="Resource" uid="uid://bi0s32o5k3nmv" path="res://resources/upgradable_hub/upgradable_container_health.tres" id="2_uc7xd"]
 
-[node name="BaseUpgradeUI" type="Control"]
+[node name="HubUpgradeHealthUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,18 +69,3 @@ grow_horizontal = 2
 [node name="Upgradable_Levels" type="VBoxContainer" parent="Control/Panel/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/PanelContainer/Upgradable_Levels"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/Panel/PanelContainer/Upgradable_Levels/HBoxContainer"]
-layout_mode = 2
-expand_mode = 3
-
-[node name="AttributeLabel" type="Label" parent="Control/Panel/PanelContainer/Upgradable_Levels/HBoxContainer"]
-layout_mode = 2
-text = "Resources"
-
-[node name="AttributeValue" type="Label" parent="Control/Panel/PanelContainer/Upgradable_Levels/HBoxContainer"]
-layout_mode = 2
-text = "20"

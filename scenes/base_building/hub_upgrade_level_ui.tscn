@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://ubkj4six2py2"]
+
+[ext_resource type="Script" path="res://scipts/upgradable_level_ui.gd" id="1_bmbex"]
+
+[node name="Upgradable_Level_UI" type="HBoxContainer"]
+script = ExtResource("1_bmbex")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+expand_mode = 3
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Resources"
+
+[node name="CostLabel" type="Label" parent="."]
+layout_mode = 2
+text = "20"
+
+[node name="ValueLabel" type="Label" parent="."]
+layout_mode = 2
+text = "20"

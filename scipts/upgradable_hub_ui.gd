@@ -11,15 +11,17 @@ enum BuildingType{
 @export var upgradable_container : UpgradableHubContainer
 
 @onready var building_name_label = $Control/Panel/BuildingName
+@onready var upgradable_levels = $Control/Panel/PanelContainer/Upgradable_Levels
 
-#TODO
-#const UPGRADABLE_LEVEL_UI = preload("res://scenes/base_building/upgradable_level_ui.tscn")
 
-func hey():
+const HUB_UPGRADABLE_LEVEL_UI = preload("res://scenes/base_building/hub_upgrade_level_ui.tscn")
+
+func _ready():
 	building_name_label.text = building_name
 	
-	var upgradable_level_ui = null#UPGRADABLE_LEVEL_UI.instantiate()
-	upgradable_level_ui.texture = upgradable_container.attribute_icon
+	var upgradable_level_ui = HUB_UPGRADABLE_LEVEL_UI.instantiate()
+	upgradable_level_ui.init_manually()
+	upgradable_level_ui.texture.texture = upgradable_container.attribute_icon
 	upgradable_level_ui.name_label.text = upgradable_container.attribute_name
 	
 	var current_level = 0
@@ -37,7 +39,7 @@ func hey():
 	upgradable_level_ui.value_label = upgradable_container\
 		.upgradables_list[current_level].value
 	
-	self.add_child(upgradable_level_ui)
+	upgradable_levels.add_child(upgradable_level_ui)
 	
 	debug_log_all_upgradables()
 	pass
