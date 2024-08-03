@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba3qf08kkdwy6"]
+
+[ext_resource type="PackedScene" uid="uid://biww2k7u1re00" path="res://assets/gltf_files/Ground.glb" id="1_7ukn8"]
+[ext_resource type="Material" uid="uid://df8na2q3u3ket" path="res://Materials/Basic.material" id="2_6y7gj"]
+
+[node name="Ground2" instance=ExtResource("1_7ukn8")]
+
+[node name="Ground" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_6y7gj")
