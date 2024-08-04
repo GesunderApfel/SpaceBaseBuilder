@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://eg4f61f7h0eh"]
+
+[ext_resource type="PackedScene" uid="uid://dno3nbf7req0t" path="res://assets/gltf_files/Dock_4.glb" id="1_rh4b2"]
+[ext_resource type="Material" uid="uid://bu3o1dsuk3x0m" path="res://Materials/BuildingAppearing.material" id="2_5mj7l"]
+
+[node name="Dock_4" instance=ExtResource("1_rh4b2")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="cargo_B_stacked_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="lights_002" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="basemodule_E_001" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="basemodule_A_001" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="lights_003" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="spacetruck_001" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="spacetruck_trailer_001" parent="." index="7"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="turret_double" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="turret" parent="turret_double" index="0"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="hangar_smallB" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="gate_006" parent="hangar_smallB" index="0"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="gate_007" parent="hangar_smallB" index="1"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="machine_generator" parent="." index="10"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="cable" parent="machine_generator" index="0"]
+surface_material_override/0 = ExtResource("2_5mj7l")
+
+[node name="machine_generatorLarge" parent="." index="11"]
+surface_material_override/0 = ExtResource("2_5mj7l")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://8yb1owdkv2fr"]
+
+[ext_resource type="PackedScene" uid="uid://fottee6ea5co" path="res://assets/gltf_files/Research_1.glb" id="1_qf054"]
+[ext_resource type="Material" uid="uid://bu3o1dsuk3x0m" path="res://Materials/BuildingAppearing.material" id="2_1pv1q"]
+
+[node name="Research_1" instance=ExtResource("1_qf054")]
+
+[node name="cargodepot_C" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1pv1q")
+
+[node name="satelliteDish_detailed" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_1pv1q")

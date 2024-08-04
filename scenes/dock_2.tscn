@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccjpsrg0vgcho"]
+
+[ext_resource type="PackedScene" uid="uid://1h55ho7u7l24" path="res://assets/gltf_files/Dock_2.glb" id="1_6g0l1"]
+[ext_resource type="Material" uid="uid://bu3o1dsuk3x0m" path="res://Materials/BuildingAppearing.material" id="2_n2sny"]
+
+[node name="Dock_2" instance=ExtResource("1_6g0l1")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_n2sny")
+
+[node name="cargo_B_stacked_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_n2sny")
+
+[node name="lights_002" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_n2sny")
+
+[node name="basemodule_A_001" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_n2sny")
+
+[node name="spacetruck_001" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_n2sny")
+
+[node name="machine_generator" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_n2sny")
+
+[node name="cable" parent="machine_generator" index="0"]
+surface_material_override/0 = ExtResource("2_n2sny")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bx4k4xeix4bul"]
+[gd_scene load_steps=78 format=3 uid="uid://bx4k4xeix4bul"]
 
 [ext_resource type="PackedScene" uid="uid://crixu15x7n00i" path="res://assets/gltf_files/windturbine_low.gltf" id="1_gmc3u"]
 [ext_resource type="PackedScene" uid="uid://bi5jhm3b1gtna" path="res://assets/gltf_files/windturbine_tall.gltf" id="2_wyl1g"]
@@ -57,13 +57,26 @@
 [ext_resource type="PackedScene" uid="uid://lochlnuvfet2" path="res://assets/gltf_files/tunnel_diagonal_short_B.gltf" id="55_051ww"]
 [ext_resource type="PackedScene" uid="uid://b5vvwwhm21qk0" path="res://assets/gltf_files/tunnel_straight_A.gltf" id="56_10cqk"]
 [ext_resource type="PackedScene" uid="uid://ry0vykb1gfcq" path="res://assets/gltf_files/tunnel_straight_B.gltf" id="57_ou57b"]
-[ext_resource type="PackedScene" path="res://scenes/Ground.tscn" id="58_vjkuj"]
+[ext_resource type="PackedScene" uid="uid://3vk1mo3d1wjk" path="res://scenes/Ground.tscn" id="58_vjkuj"]
+[ext_resource type="PackedScene" uid="uid://cjjdk67v2rg0w" path="res://scenes/road.tscn" id="59_ntvvl"]
 [ext_resource type="Texture2D" uid="uid://ycujafw310sw" path="res://assets/gltf_files/smoke_04.png" id="59_p4xdv"]
-[ext_resource type="PackedScene" path="res://scenes/grass.tscn" id="60_cmlbp"]
+[ext_resource type="PackedScene" uid="uid://8yb1owdkv2fr" path="res://scenes/research_1.tscn" id="59_q1nyo"]
+[ext_resource type="PackedScene" uid="uid://dnqc8keytyuwm" path="res://scenes/WindTurbine_Low.tscn" id="60_abuoj"]
+[ext_resource type="PackedScene" uid="uid://bjgryv7ac6phl" path="res://scenes/grass.tscn" id="60_cmlbp"]
+[ext_resource type="PackedScene" uid="uid://b56nyylg7ie53" path="res://scenes/WindTurbine_Tall.tscn" id="60_pvxd6"]
+[ext_resource type="PackedScene" uid="uid://cvn2ai8nfqi0a" path="res://scenes/research_2.tscn" id="60_v7pks"]
+[ext_resource type="PackedScene" uid="uid://bv8dgf0x1t16q" path="res://scenes/research_3.tscn" id="61_g2wd0"]
+[ext_resource type="PackedScene" uid="uid://b7vcefydcme8l" path="res://scenes/research_4.tscn" id="62_nhblw"]
+[ext_resource type="PackedScene" uid="uid://ck5vmnrf07op5" path="res://scenes/research_5.tscn" id="63_2qqu4"]
+[ext_resource type="PackedScene" uid="uid://chm0m8xsjs345" path="res://scenes/dock_1.tscn" id="64_mj8b5"]
+[ext_resource type="PackedScene" uid="uid://ccjpsrg0vgcho" path="res://scenes/dock_2.tscn" id="65_tkd8c"]
+[ext_resource type="PackedScene" uid="uid://cd851t8r1jksu" path="res://scenes/dock_3.tscn" id="66_7b1xs"]
+[ext_resource type="PackedScene" uid="uid://eg4f61f7h0eh" path="res://scenes/dock_4.tscn" id="67_ql34w"]
+[ext_resource type="PackedScene" uid="uid://bllwggxsd1mvf" path="res://scenes/dock_5.tscn" id="68_fkhqw"]
 
 [sub_resource type="Environment" id="Environment_pxtyh"]
 ambient_light_source = 2
-ambient_light_color = Color(0.374139, 0.374139, 0.374139, 1)
+ambient_light_color = Color(0.172833, 0.172833, 0.172833, 1)
 tonemap_mode = 2
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hwsem"]
@@ -108,7 +121,7 @@ material = SubResource("StandardMaterial3D_3mmi7")
 [node name="BaseBuilderLevel" type="Node"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.737454, 0.675398, 0, -0.675398, 0.737454, 0, 34.2567, 49.562)
+transform = Transform3D(1, 0, 0, 0, 0.737454, 0.675398, 0, -0.675398, 0.737454, 4.13517, 34.2567, 46.6553)
 projection = 1
 current = true
 fov = 35.0
@@ -291,10 +304,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.72524, 0, -11.9328)
 
 [node name="Level" type="Node3D" parent="."]
 
-[node name="Ground" type="Node3D" parent="Level"]
-
-[node name="Ground2" parent="Level/Ground" instance=ExtResource("58_vjkuj")]
+[node name="Ground" parent="Level" instance=ExtResource("58_vjkuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Road" parent="Level/Ground" instance=ExtResource("59_ntvvl")]
 
 [node name="Upgradable_Base" type="Node3D" parent="Level"]
 transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, -11.9375, 0.127883, 4.72317)
@@ -376,137 +389,187 @@ transform = Transform3D(0.993532, 0, -0.11355, 0, 1, 0, 0.11355, 0, 0.993532, 1.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02252, -5.46228)
 
 [node name="Level1" type="Node3D" parent="Level/Upgradable_PowerStation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.42958, 11.3329)
 
-[node name="windturbine_low4" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("1_gmc3u")]
-transform = Transform3D(0.527979, 0, 0.849257, 0, 1, 0, -0.849257, 0, 0.527979, 8.30282, 2.8159, 6.54392)
+[node name="windturbine_low3" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("60_abuoj")]
+transform = Transform3D(0.295542, 0, 0.955329, 0, 1, 0, -0.955329, 0, 0.295542, 12.5075, 2.8159, 2.21718)
 
-[node name="windturbine_low5" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("1_gmc3u")]
-transform = Transform3D(0.515038, 0, 0.857167, 0, 1, 0, -0.857167, 0, 0.515038, 9.92509, 2.99259, 5.46671)
+[node name="windturbine_low2" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("60_abuoj")]
+transform = Transform3D(0.281018, 0, 0.959702, 0, 1, 0, -0.959702, 0, 0.281018, 13.8265, 2.99259, 0.989014)
 
 [node name="basemodule_C3" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("5_ud78g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92459, 3, 0.6366)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.18644, 3, 0.536191)
 
 [node name="lights4" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("28_hb25o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13429, 3, 2.0672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06242, 3, 3.81592)
 
 [node name="lights5" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("28_hb25o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15242, 2.98481, 7.0672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.75659, 2.98481, 2.00052)
 
 [node name="lights6" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("28_hb25o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00833, 3.05505, 2.79436)
+transform = Transform3D(0.836487, 0, -0.547987, 0, 1, 0, 0.547987, 0, 0.836487, 10.5659, 3.05505, 3.14046)
 
 [node name="lights7" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("28_hb25o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.20577, 3.04182, 8.15857)
+transform = Transform3D(0.836487, 0, -0.547987, 0, 1, 0, 0.547987, 0, 0.836487, 9.57412, 3.04182, 7.83832)
 
 [node name="containers_B3" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("19_ucali")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.10054, 0.79416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47304, 3.10054, 0.693751)
 
 [node name="containers_B4" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("19_ucali")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.10054, 0.259141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47304, 3.10054, 0.158732)
 
 [node name="roofmodule_base3" parent="Level/Upgradable_PowerStation/Level1" instance=ExtResource("33_jfunm")]
-transform = Transform3D(1.44416, 0, 0, 0, 1, 0, 0, 0, 1.20727, -0.165911, 3, 0.494538)
+transform = Transform3D(1.44416, 0, 0, 0, 1, 0, 0, 0, 1.20727, 7.09594, 3, 0.394129)
 
 [node name="Level2" type="Node3D" parent="Level/Upgradable_PowerStation"]
 
+[node name="windturbine_low3" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("60_abuoj")]
+transform = Transform3D(0.27223, 0, 0.962233, 0, 1, 0, -0.962233, 0, 0.27223, 5.66814, 1.58265, 21.2179)
+
 [node name="containers_B5" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("19_ucali")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.29051, 0.79416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47362, 1.87336, 12.0256)
 
 [node name="containers_B6" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("19_ucali")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.29051, 0.259141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47362, 1.87336, 11.4905)
 
-[node name="windturbine_low6" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("1_gmc3u")]
-transform = Transform3D(0.48513, 0, 0.874442, 0, 1, 0, -0.874442, 0, 0.48513, 6.92509, 3.01196, 7.70013)
-
-[node name="windturbine_low7" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("1_gmc3u")]
-transform = Transform3D(0.502869, 0, 0.864363, 0, 1, 0, -0.864363, 0, 0.502869, 11.1818, 2.98426, 3.33585)
+[node name="windturbine_low2" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("60_abuoj")]
+transform = Transform3D(0.252542, 0, 0.967586, 0, 1, 0, -0.967586, 0, 0.252542, 6.77333, 1.61035, 19.8573)
 
 [node name="Level3" type="Node3D" parent="Level/Upgradable_PowerStation"]
 
 [node name="solarpanel3" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
-transform = Transform3D(0.948683, 0, 0.316229, 0, 1, 0, -0.316229, 0, 0.948683, -6.57137, 3.09554, 0.58886)
+transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, -1.75007, 1.54582, 19.7019)
 
 [node name="solarpanel4" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
-transform = Transform3D(0.948683, 0, 0.316229, 0, 1, 0, -0.316229, 0, 0.948683, -6.7612, 3.06245, 0.0193658)
+transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, -2.3499, 1.51273, 19.6783)
 
 [node name="solarpanel5" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
-transform = Transform3D(0.948683, 0, 0.316229, 0, 1, 0, -0.316229, 0, 0.948683, -5.22928, 3.06245, 4.61514)
+transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, 2.49071, 1.51273, 19.869)
 
 [node name="solarpanel6" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
-transform = Transform3D(0.948683, 0, 0.316229, 0, 1, 0, -0.316229, 0, 0.948683, -5.39878, 3.06245, 4.10664)
+transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, 1.95512, 1.51273, 19.8479)
 
 [node name="solarpanel7" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
-transform = Transform3D(0.948683, 0, 0.316229, 0, 1, 0, -0.316229, 0, 0.948683, -7.12664, 3.06245, 5.24759)
+transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, 2.41198, 1.51273, 21.8674)
 
 [node name="solarpanel8" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
-transform = Transform3D(0.948683, 0, 0.316229, 0, 1, 0, -0.316229, 0, 0.948683, -7.29614, 3.06245, 4.7391)
+transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, 1.8764, 1.51273, 21.8463)
 
 [node name="solarpanel9" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
-transform = Transform3D(0.948683, 0, 0.316229, 0, 1, 0, -0.316229, 0, 0.948683, -8.46925, 3.06245, 1.21978)
+transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, -1.83042, 1.51273, 21.7003)
 
 [node name="solarpanel10" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
-transform = Transform3D(0.948683, 0, 0.316229, 0, 1, 0, -0.316229, 0, 0.948683, -8.65908, 3.09554, 0.650286)
+transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, -2.43025, 1.54582, 21.6766)
 
 [node name="roofmodule_solarpanels3" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("37_whllx")]
-transform = Transform3D(0.848528, 0, -0.919239, 0, 1, 0, 0.848528, 0, 0.919239, 1.92509, 4, 0.658718)
+transform = Transform3D(0.848528, 0, -0.919239, 0, 1, 0, 0.848528, 0, 0.919239, 9.18447, 2.55698, 11.8749)
 
 [node name="containers_B7" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("19_ucali")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.47499, 0.79416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46633, 2.07006, 12.0264)
 
 [node name="containers_B8" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("19_ucali")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.47499, 0.259141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46633, 2.07006, 11.4914)
 
 [node name="Level4" type="Node3D" parent="Level/Upgradable_PowerStation"]
 
 [node name="solarpanel11" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("38_gxbor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07491, 3.11676, 7.69674)
+transform = Transform3D(0.0456942, 0, 0.998956, 0, 1, 0, -0.998956, 0, 0.0456942, -1.23997, 1.57135, 21.7261)
 
 [node name="solarpanel12" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("38_gxbor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07491, 1.56263, 10.6604)
+transform = Transform3D(0.0269271, 0, 0.999637, 0, 1, 0, -0.999637, 0, 0.0269271, 2.99303, 1.52429, 21.8799)
 
 [node name="solarpanel13" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("38_gxbor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07491, 1.56263, 10.6604)
+transform = Transform3D(0.0269271, 0, 0.999637, 0, 1, 0, -0.999637, 0, 0.0269271, 3.04688, 1.52429, 19.8807)
 
 [node name="solarpanel14" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("38_gxbor")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07491, 3.11676, 7.68746)
+transform = Transform3D(0.0456942, 0, 0.998956, 0, 1, 0, -0.998956, 0, 0.0456942, -1.15785, 1.57135, 19.7278)
 
 [node name="containers_B9" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("19_ucali")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.66866, 0.79416)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48298, 2.28262, 12.0325)
 
 [node name="containers_B10" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("19_ucali")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211189, 3.66866, 0.259141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48298, 2.28262, 11.4975)
 
 [node name="Level5" type="Node3D" parent="Level/Upgradable_PowerStation"]
 
-[node name="windturbine_tall4" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("2_wyl1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92509, 3, 2.0672)
-
-[node name="windturbine_tall5" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("2_wyl1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07491, 3, 2.0672)
-
 [node name="containers_C3" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566212, 3.10054, 0.771269)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 1.66473, 11.9812)
 
 [node name="containers_C4" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566212, 3.10054, 0.274484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 1.66473, 11.4844)
 
 [node name="containers_C5" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566212, 3.28927, 0.771269)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 1.85346, 11.9812)
 
 [node name="containers_C6" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566212, 3.28927, 0.274484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 1.85346, 11.4844)
 
 [node name="containers_C7" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566212, 3.47568, 0.771269)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 2.03987, 11.9812)
 
 [node name="containers_C8" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566212, 3.47568, 0.274484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 2.03987, 11.4844)
 
 [node name="containers_C9" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566212, 3.64815, 0.771269)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 2.21234, 11.9812)
 
 [node name="containers_C10" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566212, 3.64815, 0.274484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 2.21234, 11.4844)
+
+[node name="windturbine_tall2" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("60_pvxd6")]
+transform = Transform3D(0.320315, 0, 0.947311, 0, 1, 0, -0.947311, 0, 0.320315, -5.43046, 1.58166, 21.5071)
+
+[node name="windturbine_tall3" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("60_pvxd6")]
+transform = Transform3D(0.320315, 0, 0.947311, 0, 1, 0, -0.947311, 0, 0.320315, -7.67321, 1.58166, 19.5438)
+
+[node name="windturbine_tall4" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("60_pvxd6")]
+transform = Transform3D(0.320315, 0, 0.947311, 0, 1, 0, -0.947311, 0, 0.320315, -10.1785, 1.58166, 17.7802)
+
+[node name="Upgradable_Research_Center" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2.17202)
+
+[node name="Level1" type="Node3D" parent="Level/Upgradable_Research_Center"]
+
+[node name="Research_1" parent="Level/Upgradable_Research_Center/Level1" instance=ExtResource("59_q1nyo")]
+
+[node name="Level2" type="Node3D" parent="Level/Upgradable_Research_Center"]
+
+[node name="Research_2" parent="Level/Upgradable_Research_Center/Level2" instance=ExtResource("60_v7pks")]
+
+[node name="Level3" type="Node3D" parent="Level/Upgradable_Research_Center"]
+
+[node name="Research_3" parent="Level/Upgradable_Research_Center/Level3" instance=ExtResource("61_g2wd0")]
+
+[node name="Level4" type="Node3D" parent="Level/Upgradable_Research_Center"]
+
+[node name="Research_4" parent="Level/Upgradable_Research_Center/Level4" instance=ExtResource("62_nhblw")]
+
+[node name="Level5" type="Node3D" parent="Level/Upgradable_Research_Center"]
+
+[node name="Research_5" parent="Level/Upgradable_Research_Center/Level5" instance=ExtResource("63_2qqu4")]
+
+[node name="Upgradable_Ship_Docks" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Level1" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+
+[node name="Dock_1" parent="Level/Upgradable_Ship_Docks/Level1" instance=ExtResource("64_mj8b5")]
+
+[node name="Level2" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+
+[node name="Dock_2" parent="Level/Upgradable_Ship_Docks/Level2" instance=ExtResource("65_tkd8c")]
+
+[node name="Level3" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+
+[node name="Dock_3" parent="Level/Upgradable_Ship_Docks/Level3" instance=ExtResource("66_7b1xs")]
+
+[node name="Level4" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+
+[node name="Dock_4" parent="Level/Upgradable_Ship_Docks/Level4" instance=ExtResource("67_ql34w")]
+
+[node name="Level5" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+
+[node name="Dock_5" parent="Level/Upgradable_Ship_Docks/Level5" instance=ExtResource("68_fkhqw")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pxtyh")
@@ -514,7 +577,7 @@ environment = SubResource("Environment_pxtyh")
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-1.59995e-08, 0.866025, 0.5, 5.97109e-08, -0.5, 0.866025, 1, 4.37114e-08, -4.37114e-08, -18.8456, 20.4432, 0)
 shadow_enabled = true
-shadow_bias = 0.29
+shadow_normal_bias = 3.755
 directional_shadow_mode = 1
 
 [node name="DustParticles" type="GPUParticles3D" parent="."]
@@ -522,15 +585,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4412, 10.0749, 9.91629)
 cast_shadow = 0
 amount = 128
 lifetime = 10.0
-visibility_aabb = AABB(-7.11433, -4, -35.8745, 14.2287, 8, 71.7491)
+preprocess = 6.11
+visibility_aabb = AABB(-115.371, -37.224, -35.8745, 230.742, 74.4479, 71.7491)
 process_material = SubResource("ParticleProcessMaterial_hwsem")
 draw_pass_1 = SubResource("QuadMesh_7vi5d")
 
 [node name="Grass2" parent="." instance=ExtResource("60_cmlbp")]
-transform = Transform3D(0.750446, 0, 0.660932, 0, 1, 0, -0.660932, 0, 0.750446, -20.4147, 0, 23.5276)
+transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223, -20.4147, 0, 23.5276)
+
+[node name="Grass6" parent="." instance=ExtResource("60_cmlbp")]
+transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223, -3.99925, 2.63388, 6.74913)
+
+[node name="Grass5" parent="." instance=ExtResource("60_cmlbp")]
+transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223, -10.118, 0, 29.7535)
 
 [node name="Grass3" parent="." instance=ExtResource("60_cmlbp")]
-transform = Transform3D(0.750446, 0, 0.660932, 0, 1, 0, -0.660932, 0, 0.750446, 29.248, 0, 13.731)
+transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223, 26.6938, 0, 10.6979)
 
 [node name="Grass4" parent="." instance=ExtResource("60_cmlbp")]
-transform = Transform3D(0.750446, 0, 0.660932, 0, 1, 0, -0.660932, 0, 0.750446, 20.4555, 0, 26.3331)
+transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223, 23.8079, 0, 31.0424)

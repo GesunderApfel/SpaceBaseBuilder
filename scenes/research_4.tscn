@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7vcefydcme8l"]
+
+[ext_resource type="PackedScene" uid="uid://by43by8ixd7fw" path="res://assets/gltf_files/Research_4.glb" id="1_t3bny"]
+[ext_resource type="Material" uid="uid://bu3o1dsuk3x0m" path="res://Materials/BuildingAppearing.material" id="2_y4bgk"]
+
+[node name="Research_4" instance=ExtResource("1_t3bny")]
+
+[node name="cargo_B_packed" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="cargodepot_C" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="lights" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="structure_low" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="lights_001" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="cargo_B_packed_001" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="cargodepot_C_001" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="cargodepot_C_002" parent="." index="7"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="satelliteDish_detailed" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="satelliteDish_detailed_001" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_y4bgk")
+
+[node name="machine_wirelessCable" parent="." index="10"]
+surface_material_override/0 = ExtResource("2_y4bgk")
