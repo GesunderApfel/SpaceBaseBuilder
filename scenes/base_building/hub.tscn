@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://bx4k4xeix4bul"]
+[gd_scene load_steps=94 format=3 uid="uid://bx4k4xeix4bul"]
 
 [ext_resource type="PackedScene" uid="uid://crixu15x7n00i" path="res://assets/gltf_files/windturbine_low.gltf" id="1_gmc3u"]
 [ext_resource type="Script" path="res://scipts/hub_player.gd" id="1_n4ovw"]
@@ -64,8 +64,20 @@
 [ext_resource type="PackedScene" uid="uid://3vk1mo3d1wjk" path="res://scenes/Ground.tscn" id="58_vjkuj"]
 [ext_resource type="PackedScene" uid="uid://cjjdk67v2rg0w" path="res://scenes/road.tscn" id="59_ntvvl"]
 [ext_resource type="Texture2D" uid="uid://ycujafw310sw" path="res://assets/gltf_files/smoke_04.png" id="59_p4xdv"]
-[ext_resource type="PackedScene" path="res://scenes/grass.tscn" id="60_cmlbp"]
+[ext_resource type="PackedScene" uid="uid://8yb1owdkv2fr" path="res://scenes/research_1.tscn" id="59_q1nyo"]
+[ext_resource type="PackedScene" uid="uid://dnqc8keytyuwm" path="res://scenes/WindTurbine_Low.tscn" id="60_abuoj"]
+[ext_resource type="PackedScene" uid="uid://bjgryv7ac6phl" path="res://scenes/grass.tscn" id="60_cmlbp"]
+[ext_resource type="PackedScene" uid="uid://b56nyylg7ie53" path="res://scenes/WindTurbine_Tall.tscn" id="60_pvxd6"]
+[ext_resource type="PackedScene" uid="uid://cvn2ai8nfqi0a" path="res://scenes/research_2.tscn" id="60_v7pks"]
+[ext_resource type="PackedScene" uid="uid://bv8dgf0x1t16q" path="res://scenes/research_3.tscn" id="61_g2wd0"]
 [ext_resource type="Script" path="res://scipts/hub_upgrade_visualizer.gd" id="62_aq1wv"]
+[ext_resource type="PackedScene" uid="uid://b7vcefydcme8l" path="res://scenes/research_4.tscn" id="62_nhblw"]
+[ext_resource type="PackedScene" uid="uid://ck5vmnrf07op5" path="res://scenes/research_5.tscn" id="63_2qqu4"]
+[ext_resource type="PackedScene" uid="uid://chm0m8xsjs345" path="res://scenes/dock_1.tscn" id="64_mj8b5"]
+[ext_resource type="PackedScene" uid="uid://ccjpsrg0vgcho" path="res://scenes/dock_2.tscn" id="65_tkd8c"]
+[ext_resource type="PackedScene" uid="uid://cd851t8r1jksu" path="res://scenes/dock_3.tscn" id="66_7b1xs"]
+[ext_resource type="PackedScene" uid="uid://eg4f61f7h0eh" path="res://scenes/dock_4.tscn" id="67_ql34w"]
+[ext_resource type="PackedScene" uid="uid://bllwggxsd1mvf" path="res://scenes/dock_5.tscn" id="68_fkhqw"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_p4x1x"]
 viewport_path = NodePath("GUI_3D/Upgrade_Health/ViewportHealth")
@@ -101,19 +113,6 @@ albedo_texture = SubResource("ViewportTexture_qu2pc")
 [sub_resource type="SphereShape3D" id="SphereShape3D_qlkue"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yxt2t"]
-[ext_resource type="PackedScene" uid="uid://8yb1owdkv2fr" path="res://scenes/research_1.tscn" id="59_q1nyo"]
-[ext_resource type="PackedScene" uid="uid://dnqc8keytyuwm" path="res://scenes/WindTurbine_Low.tscn" id="60_abuoj"]
-[ext_resource type="PackedScene" uid="uid://bjgryv7ac6phl" path="res://scenes/grass.tscn" id="60_cmlbp"]
-[ext_resource type="PackedScene" uid="uid://b56nyylg7ie53" path="res://scenes/WindTurbine_Tall.tscn" id="60_pvxd6"]
-[ext_resource type="PackedScene" uid="uid://cvn2ai8nfqi0a" path="res://scenes/research_2.tscn" id="60_v7pks"]
-[ext_resource type="PackedScene" uid="uid://bv8dgf0x1t16q" path="res://scenes/research_3.tscn" id="61_g2wd0"]
-[ext_resource type="PackedScene" uid="uid://b7vcefydcme8l" path="res://scenes/research_4.tscn" id="62_nhblw"]
-[ext_resource type="PackedScene" uid="uid://ck5vmnrf07op5" path="res://scenes/research_5.tscn" id="63_2qqu4"]
-[ext_resource type="PackedScene" uid="uid://chm0m8xsjs345" path="res://scenes/dock_1.tscn" id="64_mj8b5"]
-[ext_resource type="PackedScene" uid="uid://ccjpsrg0vgcho" path="res://scenes/dock_2.tscn" id="65_tkd8c"]
-[ext_resource type="PackedScene" uid="uid://cd851t8r1jksu" path="res://scenes/dock_3.tscn" id="66_7b1xs"]
-[ext_resource type="PackedScene" uid="uid://eg4f61f7h0eh" path="res://scenes/dock_4.tscn" id="67_ql34w"]
-[ext_resource type="PackedScene" uid="uid://bllwggxsd1mvf" path="res://scenes/dock_5.tscn" id="68_fkhqw"]
 
 [sub_resource type="Environment" id="Environment_pxtyh"]
 ambient_light_source = 2
@@ -201,6 +200,7 @@ transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459
 shape = SubResource("BoxShape3D_j0135")
 
 [node name="Upgrade_Energy" type="Node3D" parent="GUI_3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.70542, -3.05441, -6.73827)
 
 [node name="EnergyGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Energy"]
 transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, 2.279, 6.896, 10.163)
@@ -229,6 +229,7 @@ transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459
 shape = SubResource("BoxShape3D_j0135")
 
 [node name="Upgrade_Depot" type="Node3D" parent="GUI_3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3924, 0, 0)
 
 [node name="ViewportDepot" type="SubViewport" parent="GUI_3D/Upgrade_Depot"]
 transparent_bg = true
@@ -614,10 +615,11 @@ transform = Transform3D(1.44416, 0, 0, 0, 1, 0, 0, 0, 1.20727, 7.09594, 3, 0.394
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95264, 3.30767, 0.572824)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_PowerStation/Level1/StaticBody3D"]
-transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 6.9958, 0, 0)
 shape = SubResource("SphereShape3D_02hrm")
 
 [node name="Level2" type="Node3D" parent="Level/Upgradable_PowerStation"]
+visible = false
 
 [node name="windturbine_low3" parent="Level/Upgradable_PowerStation/Level2" instance=ExtResource("60_abuoj")]
 transform = Transform3D(0.27223, 0, 0.962233, 0, 1, 0, -0.962233, 0, 0.27223, 5.66814, 1.58265, 21.2179)
@@ -632,6 +634,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47362, 1.87336, 11.4905)
 transform = Transform3D(0.252542, 0, 0.967586, 0, 1, 0, -0.967586, 0, 0.252542, 6.77333, 1.61035, 19.8573)
 
 [node name="Level3" type="Node3D" parent="Level/Upgradable_PowerStation"]
+visible = false
 
 [node name="solarpanel3" parent="Level/Upgradable_PowerStation/Level3" instance=ExtResource("38_gxbor")]
 transform = Transform3D(0.0393641, 0, 0.999225, 0, 1, 0, -0.999225, 0, 0.0393641, -1.75007, 1.54582, 19.7019)
@@ -667,6 +670,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46633, 2.07006, 12.0264)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46633, 2.07006, 11.4914)
 
 [node name="Level4" type="Node3D" parent="Level/Upgradable_PowerStation"]
+visible = false
 
 [node name="solarpanel11" parent="Level/Upgradable_PowerStation/Level4" instance=ExtResource("38_gxbor")]
 transform = Transform3D(0.0456942, 0, 0.998956, 0, 1, 0, -0.998956, 0, 0.0456942, -1.23997, 1.57135, 21.7261)
@@ -687,6 +691,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48298, 2.28262, 12.0325)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.48298, 2.28262, 11.4975)
 
 [node name="Level5" type="Node3D" parent="Level/Upgradable_PowerStation"]
+visible = false
 
 [node name="containers_C3" parent="Level/Upgradable_PowerStation/Level5" instance=ExtResource("20_fqyl2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77889, 1.66473, 11.9812)
@@ -723,6 +728,7 @@ transform = Transform3D(0.320315, 0, 0.947311, 0, 1, 0, -0.947311, 0, 0.320315, 
 
 [node name="Upgradable_Research_Center" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2.17202)
+script = ExtResource("62_aq1wv")
 
 [node name="Level1" type="Node3D" parent="Level/Upgradable_Research_Center"]
 
@@ -746,24 +752,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2.17202)
 
 [node name="Upgradable_Ship_Docks" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("62_aq1wv")
 
 [node name="Level1" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
 
 [node name="Dock_1" parent="Level/Upgradable_Ship_Docks/Level1" instance=ExtResource("64_mj8b5")]
 
 [node name="Level2" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+visible = false
 
 [node name="Dock_2" parent="Level/Upgradable_Ship_Docks/Level2" instance=ExtResource("65_tkd8c")]
 
 [node name="Level3" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+visible = false
 
 [node name="Dock_3" parent="Level/Upgradable_Ship_Docks/Level3" instance=ExtResource("66_7b1xs")]
 
 [node name="Level4" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+visible = false
 
 [node name="Dock_4" parent="Level/Upgradable_Ship_Docks/Level4" instance=ExtResource("67_ql34w")]
 
 [node name="Level5" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
+visible = false
 
 [node name="Dock_5" parent="Level/Upgradable_Ship_Docks/Level5" instance=ExtResource("68_fkhqw")]
 
@@ -799,7 +810,7 @@ transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223
 transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223, 26.6938, 0, 10.6979)
 
 [node name="Grass4" parent="." instance=ExtResource("60_cmlbp")]
-transform = Transform3D(0.750446, 0, 0.660932, 0, 1, 0, -0.660932, 0, 0.750446, 20.4555, 0, 26.3331)
+transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223, 23.8079, 0, 31.0424)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -807,4 +818,3 @@ transform = Transform3D(0.750446, 0, 0.660932, 0, 1, 0, -0.660932, 0, 0.750446, 
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Currency: "
-transform = Transform3D(0.375223, 0, 0.330466, 0, 0.5, 0, -0.330466, 0, 0.375223, 23.8079, 0, 31.0424)
