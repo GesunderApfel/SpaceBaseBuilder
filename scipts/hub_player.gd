@@ -40,7 +40,6 @@ func _input(event):
 			hub_upgrade_energy_ui.hide()
 			hub_upgrade_depot_ui.hide()
 			return
-			
 		
 		if result.collider.is_in_group("hub_upgrade_health"):
 			if not hub_upgrade_health_ui.upgradable_container.is_finished(HubState.hub_base_level):
@@ -63,12 +62,14 @@ func _input(event):
 				currency.text = "Currency: " + str(HubState.currency)
 				HubState.hub_base_level += 1
 				hub_upgrade_health_ui.update_ui()
+				upgradable_base.upgrade()
 		elif result.collider.is_in_group("ui_energy_upgrade_button"):
 			if hub_upgrade_energy_ui.upgradable_container.is_buyable(HubState.hub_energy_level):
 				hub_upgrade_energy_ui.upgradable_container.upgrade_level(HubState.hub_energy_level)
 				currency.text = "Currency: " + str(HubState.currency)
 				HubState.hub_energy_level += 1
 				hub_upgrade_energy_ui.update_ui()
+				upgradable_power_station.upgrade()
 		elif result.collider.is_in_group("ui_depot_upgrade_button"):
 			if hub_upgrade_depot_ui.upgradable_container.is_buyable(HubState.hub_depot_level):
 				hub_upgrade_depot_ui.upgradable_container.upgrade_level(HubState.hub_depot_level)

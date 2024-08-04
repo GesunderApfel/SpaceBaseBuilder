@@ -44,7 +44,7 @@ func update_ui():
 		BuildingType.DEPOT:
 			current_level = HubState.hub_depot_level
 	
-	if current_level > 5:
+	if current_level >= 4:
 		self.hide()
 		return
 	

@@ -32,7 +32,7 @@ func _ready():
 	levels.append(level_4)
 	levels.append(level_5)
 	
-	#hide_all()
+	hide_all()
 	
 	match building_type:
 		BuildingType.BASE:
@@ -45,13 +45,19 @@ func _ready():
 	
 func hide_all():
 	for i in levels:
-		i.hide()
+		if not i == level_1: 
+			i.hide()
+			
+	level_1.show()
 
 func upgrade():
+	current_level+=1
+	if current_level >= 5:
+		return
+	
 	if upgrade_type == UpgradeType.ADDITIONAL:
 		levels[current_level].show()
 	else:
 		levels[current_level].show()
-		if current_level > 0:
-			levels[current_level-1].hide()
+		levels[current_level-1].hide()
 
