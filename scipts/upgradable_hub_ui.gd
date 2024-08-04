@@ -4,6 +4,8 @@ enum BuildingType{
 	BASE,
 	ENERGY,
 	DEPOT,
+	RESEARCH,
+	DOCKS,
 }
 
 @export var building_type : BuildingType = BuildingType.BASE
@@ -43,7 +45,11 @@ func update_ui():
 			current_level = HubState.hub_energy_level
 		BuildingType.DEPOT:
 			current_level = HubState.hub_depot_level
-	
+		BuildingType.RESEARCH:
+			current_level = HubState.hub_research_level
+		BuildingType.DOCKS:
+			current_level = HubState.hub_docks_level
+		
 	if current_level >= 4:
 		self.hide()
 		return

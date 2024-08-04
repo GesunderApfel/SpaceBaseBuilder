@@ -4,6 +4,8 @@ enum BuildingType{
 	BASE,
 	ENERGY,
 	DEPOT,
+	DOCKS,
+	RESEARCH
 }
 
 enum UpgradeType{
@@ -41,8 +43,10 @@ func _ready():
 			current_level = HubState.hub_energy_level
 		BuildingType.DEPOT:
 			current_level = HubState.hub_depot_level
-		
-	
+		BuildingType.DOCKS:
+			current_level = HubState.hub_docks_level
+		BuildingType.RESEARCH:
+			current_level = HubState.hub_research_level
 func hide_all():
 	for i in levels:
 		if not i == level_1: 

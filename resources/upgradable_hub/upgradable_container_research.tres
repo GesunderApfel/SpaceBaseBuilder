@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UpgradableHubContainer" load_steps=9 format=3 uid="uid://fiiomobvuu5j"]
+
+[ext_resource type="Texture2D" uid="uid://cc0q2fmkat1la" path="res://assets/base_building_ui/Elements/IconD03.png" id="1_gb16p"]
+[ext_resource type="Texture2D" uid="uid://6ylwfwkd6pn" path="res://assets/base_building_ui/Elements/IconD13.png" id="2_8vpxg"]
+[ext_resource type="Texture2D" uid="uid://ccruhdm7cnbja" path="res://assets/base_building_ui/Elements/IconD08.png" id="3_ohyto"]
+[ext_resource type="Script" path="res://scipts/upgradable_hub_container.gd" id="4_m7qem"]
+[ext_resource type="Resource" uid="uid://bs2ccliu0lfr4" path="res://resources/upgradable_hub/research/upgrade_hub_research_1.tres" id="6_wva2g"]
+[ext_resource type="Resource" uid="uid://ct8dp4veytfq0" path="res://resources/upgradable_hub/research/upgrade_hub_research_2.tres" id="7_lda7l"]
+[ext_resource type="Resource" uid="uid://cf2lui8l52wlx" path="res://resources/upgradable_hub/research/upgrade_hub_research_3.tres" id="8_f7uda"]
+[ext_resource type="Resource" uid="uid://boiunpthae5xv" path="res://resources/upgradable_hub/research/upgrade_hub_research_4.tres" id="9_74agh"]
+
+[resource]
+script = ExtResource("4_m7qem")
+attribute_name = "Technology"
+upgradables_list = Array[Resource("res://scipts/upgradable_hub_level.gd")]([ExtResource("6_wva2g"), ExtResource("7_lda7l"), ExtResource("8_f7uda"), ExtResource("9_74agh")])
+attribute_icon = ExtResource("1_gb16p")
+attribute_icon_sucess = ExtResource("3_ohyto")
+attribute_icon_failure = ExtResource("2_8vpxg")

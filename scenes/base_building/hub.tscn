@@ -1,13 +1,15 @@
-[gd_scene load_steps=94 format=3 uid="uid://bx4k4xeix4bul"]
+[gd_scene load_steps=98 format=3 uid="uid://bx4k4xeix4bul"]
 
 [ext_resource type="PackedScene" uid="uid://crixu15x7n00i" path="res://assets/gltf_files/windturbine_low.gltf" id="1_gmc3u"]
 [ext_resource type="Script" path="res://scipts/hub_player.gd" id="1_n4ovw"]
 [ext_resource type="PackedScene" uid="uid://dunfcjr06cb70" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_health_ui.tscn" id="2_cj5u1"]
+[ext_resource type="Script" path="res://scipts/UIWorldSpaceController.gd" id="2_ii7wn"]
 [ext_resource type="PackedScene" uid="uid://bi5jhm3b1gtna" path="res://assets/gltf_files/windturbine_tall.gltf" id="2_wyl1g"]
 [ext_resource type="PackedScene" uid="uid://dxehb2s50wojm" path="res://assets/gltf_files/basemodule_A.gltf" id="3_biqyf"]
 [ext_resource type="PackedScene" uid="uid://u01r3jsm8t8u" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_energy_ui.tscn" id="3_ofmlu"]
-[ext_resource type="PackedScene" uid="uid://n8lwfc6gp6ir" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_depot_ui.tscn" id="4_1y3i2"]
 [ext_resource type="PackedScene" uid="uid://qsmcq1v4ywik" path="res://assets/gltf_files/basemodule_B.gltf" id="4_66785"]
+[ext_resource type="PackedScene" uid="uid://exl3pd7igfjc" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_docks_ui.tscn" id="4_lhb5f"]
+[ext_resource type="PackedScene" uid="uid://bshujj5t47ckp" path="res://scenes/base_building/upgrade_ui_types/hub_upgrade_research_ui.tscn" id="5_hs6yb"]
 [ext_resource type="PackedScene" uid="uid://40kags55e5ra" path="res://assets/gltf_files/basemodule_C.gltf" id="5_ud78g"]
 [ext_resource type="PackedScene" uid="uid://wjwcxcs8baxd" path="res://assets/gltf_files/basemodule_D.gltf" id="6_cv81p"]
 [ext_resource type="PackedScene" uid="uid://dv2i72uv8hkti" path="res://assets/gltf_files/basemodule_E.gltf" id="7_5d2e0"]
@@ -100,13 +102,21 @@ resource_local_to_scene = true
 transparency = 1
 albedo_texture = SubResource("ViewportTexture_yvtul")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_qu2pc"]
-viewport_path = NodePath("GUI_3D/Upgrade_Depot/ViewportDepot")
+[sub_resource type="ViewportTexture" id="ViewportTexture_ndhv4"]
+viewport_path = NodePath("GUI_3D/Upgrade_Docks/ViewportDocks")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vaus1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0de1e"]
 resource_local_to_scene = true
 transparency = 1
-albedo_texture = SubResource("ViewportTexture_qu2pc")
+albedo_texture = SubResource("ViewportTexture_ndhv4")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_sw1vr"]
+viewport_path = NodePath("GUI_3D/Upgrade_Research/ViewportResearch")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2ibx"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_sw1vr")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_02hrm"]
 
@@ -162,16 +172,20 @@ material = SubResource("StandardMaterial3D_3mmi7")
 script = ExtResource("1_n4ovw")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.737454, 0.675398, 0, -0.675398, 0.737454, 4.13517, 34.2567, 46.6553)
+transform = Transform3D(1, 0, 0, 0, 0.737454, 0.675398, 0, -0.675398, 0.737454, 4.765, 40.617, 46.655)
 projection = 1
 current = true
 fov = 35.0
-size = 33.432
+size = 40.163
 far = 400.0
 
 [node name="GUI_3D" type="Node3D" parent="."]
 
-[node name="Upgrade_Health" type="Node3D" parent="GUI_3D"]
+[node name="Upgrade_Health" type="Node3D" parent="GUI_3D" node_paths=PackedStringArray("ui", "collisionshape")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3642, -1.34674, 0)
+script = ExtResource("2_ii7wn")
+ui = NodePath("ViewportHealth/UI2D/HubUpgradeHealthUI")
+collisionshape = NodePath("StaticBody3D/CollisionShape3D")
 
 [node name="ViewportHealth" type="SubViewport" parent="GUI_3D/Upgrade_Health"]
 transparent_bg = true
@@ -199,8 +213,11 @@ skeleton = NodePath("../..")
 transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459, 11.5345, 7.25769, 18.3816)
 shape = SubResource("BoxShape3D_j0135")
 
-[node name="Upgrade_Energy" type="Node3D" parent="GUI_3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.70542, -3.05441, -6.73827)
+[node name="Upgrade_Energy" type="Node3D" parent="GUI_3D" node_paths=PackedStringArray("ui", "collisionshape")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.70542, -4.29574, -6.73827)
+script = ExtResource("2_ii7wn")
+ui = NodePath("ViewportEnergy/UI2D/HubUpgradeEnergyUI")
+collisionshape = NodePath("StaticBody3D2/CollisionShape3D")
 
 [node name="EnergyGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Energy"]
 transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, 2.279, 6.896, 10.163)
@@ -228,32 +245,68 @@ layout_mode = 1
 transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459, 0.534609, 9.10416, 8.28982)
 shape = SubResource("BoxShape3D_j0135")
 
-[node name="Upgrade_Depot" type="Node3D" parent="GUI_3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3924, 0, 0)
+[node name="Upgrade_Docks" type="Node3D" parent="GUI_3D" node_paths=PackedStringArray("ui", "collisionshape")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1913, -2.59382, 1.21799)
+script = ExtResource("2_ii7wn")
+ui = NodePath("ViewportDocks/UI2D/HubUpgradeDocksUI")
+collisionshape = NodePath("StaticBody3D3/CollisionShape3D")
 
-[node name="ViewportDepot" type="SubViewport" parent="GUI_3D/Upgrade_Depot"]
+[node name="ViewportDocks" type="SubViewport" parent="GUI_3D/Upgrade_Docks"]
 transparent_bg = true
 size = Vector2i(256, 256)
 
-[node name="UI2D" type="Control" parent="GUI_3D/Upgrade_Depot/ViewportDepot"]
+[node name="UI2D" type="Control" parent="GUI_3D/Upgrade_Docks/ViewportDocks"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HubUpgradeDepotUI" parent="GUI_3D/Upgrade_Depot/ViewportDepot/UI2D" instance=ExtResource("4_1y3i2")]
+[node name="HubUpgradeDocksUI" parent="GUI_3D/Upgrade_Docks/ViewportDocks/UI2D" instance=ExtResource("4_lhb5f")]
 visible = false
 layout_mode = 1
 
-[node name="DepotGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Depot"]
+[node name="DocksGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Docks"]
 transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, -10.741, 4.706, 20.413)
-material_override = SubResource("StandardMaterial3D_vaus1")
+material_override = SubResource("StandardMaterial3D_0de1e")
 mesh = SubResource("QuadMesh_uiusi")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="GUI_3D/Upgrade_Depot" groups=["ui_depot_upgrade_button"]]
+[node name="StaticBody3D3" type="StaticBody3D" parent="GUI_3D/Upgrade_Docks" groups=["ui_docks_upgrade_button"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI_3D/Upgrade_Depot/StaticBody3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI_3D/Upgrade_Docks/StaticBody3D3"]
+transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459, -12.4088, 7.25769, 18.3816)
+shape = SubResource("BoxShape3D_j0135")
+
+[node name="Upgrade_Research" type="Node3D" parent="GUI_3D" node_paths=PackedStringArray("ui", "collisionshape")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3408, -0.889472, -28.7357)
+script = ExtResource("2_ii7wn")
+ui = NodePath("ViewportResearch/UI2D/HubUpgradeResearchUI")
+collisionshape = NodePath("StaticBody3D3/CollisionShape3D")
+
+[node name="ViewportResearch" type="SubViewport" parent="GUI_3D/Upgrade_Research"]
+transparent_bg = true
+size = Vector2i(256, 256)
+
+[node name="UI2D" type="Control" parent="GUI_3D/Upgrade_Research/ViewportResearch"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HubUpgradeResearchUI" parent="GUI_3D/Upgrade_Research/ViewportResearch/UI2D" instance=ExtResource("5_hs6yb")]
+visible = false
+layout_mode = 1
+
+[node name="ResearchGUI" type="MeshInstance3D" parent="GUI_3D/Upgrade_Research"]
+transform = Transform3D(11.741, 0, 0, 0, 8.79348, 0.66262, 0, -7.77981, 0.748956, -4.77699, 4.706, 20.413)
+material_override = SubResource("StandardMaterial3D_e2ibx")
+mesh = SubResource("QuadMesh_uiusi")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="GUI_3D/Upgrade_Research" groups=["ui_research_upgrade_button"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96401, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GUI_3D/Upgrade_Research/StaticBody3D3"]
 transform = Transform3D(7.30623, 0, 0, 0, 3.85727, 1.01459, 0, -3.85727, 1.01459, -12.4088, 7.25769, 18.3816)
 shape = SubResource("BoxShape3D_j0135")
 
@@ -729,10 +782,18 @@ transform = Transform3D(0.320315, 0, 0.947311, 0, 1, 0, -0.947311, 0, 0.320315, 
 [node name="Upgradable_Research_Center" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 2.17202)
 script = ExtResource("62_aq1wv")
+building_type = 4
 
 [node name="Level1" type="Node3D" parent="Level/Upgradable_Research_Center"]
 
 [node name="Research_1" parent="Level/Upgradable_Research_Center/Level1" instance=ExtResource("59_q1nyo")]
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Level/Upgradable_Research_Center/Level1" groups=["hub_upgrade_research"]]
+transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, 4.39976, 6.12479, -5.54685)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Research_Center/Level1/StaticBody3D2"]
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
 
 [node name="Level2" type="Node3D" parent="Level/Upgradable_Research_Center"]
 
@@ -742,6 +803,13 @@ script = ExtResource("62_aq1wv")
 
 [node name="Research_3" parent="Level/Upgradable_Research_Center/Level3" instance=ExtResource("61_g2wd0")]
 
+[node name="StaticBody3D3" type="StaticBody3D" parent="Level/Upgradable_Research_Center/Level3" groups=["hub_upgrade_research"]]
+transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, -1.34467, 6.12479, -6.1883)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Research_Center/Level3/StaticBody3D3"]
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
+
 [node name="Level4" type="Node3D" parent="Level/Upgradable_Research_Center"]
 
 [node name="Research_4" parent="Level/Upgradable_Research_Center/Level4" instance=ExtResource("62_nhblw")]
@@ -750,33 +818,65 @@ script = ExtResource("62_aq1wv")
 
 [node name="Research_5" parent="Level/Upgradable_Research_Center/Level5" instance=ExtResource("63_2qqu4")]
 
+[node name="StaticBody3D4" type="StaticBody3D" parent="Level/Upgradable_Research_Center/Level5" groups=["hub_upgrade_research"]]
+transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, 1.55655, 6.12479, -6.1883)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Research_Center/Level5/StaticBody3D4"]
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
+
 [node name="Upgradable_Ship_Docks" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 script = ExtResource("62_aq1wv")
+building_type = 3
 
 [node name="Level1" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
 
 [node name="Dock_1" parent="Level/Upgradable_Ship_Docks/Level1" instance=ExtResource("64_mj8b5")]
 
+[node name="StaticBody3D3" type="StaticBody3D" parent="Level/Upgradable_Ship_Docks/Level1" groups=["hub_upgrade_docks"]]
+transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, 23.195, 1.69417, 25.3659)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Ship_Docks/Level1/StaticBody3D3"]
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
+
 [node name="Level2" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
-visible = false
 
 [node name="Dock_2" parent="Level/Upgradable_Ship_Docks/Level2" instance=ExtResource("65_tkd8c")]
 
+[node name="StaticBody3D4" type="StaticBody3D" parent="Level/Upgradable_Ship_Docks/Level2" groups=["hub_upgrade_docks"]]
+transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, 19.5894, 1.69417, 27.5318)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Ship_Docks/Level2/StaticBody3D4"]
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
+
 [node name="Level3" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
-visible = false
 
 [node name="Dock_3" parent="Level/Upgradable_Ship_Docks/Level3" instance=ExtResource("66_7b1xs")]
 
+[node name="StaticBody3D5" type="StaticBody3D" parent="Level/Upgradable_Ship_Docks/Level3" groups=["hub_upgrade_docks"]]
+transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, 25.9132, 1.69417, 19.3201)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Ship_Docks/Level3/StaticBody3D5"]
+transform = Transform3D(4.545, 0, 0, 0, 4.545, 0, 0, 0, 4.545, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
+
 [node name="Level4" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
-visible = false
 
 [node name="Dock_4" parent="Level/Upgradable_Ship_Docks/Level4" instance=ExtResource("67_ql34w")]
 
 [node name="Level5" type="Node3D" parent="Level/Upgradable_Ship_Docks"]
-visible = false
 
 [node name="Dock_5" parent="Level/Upgradable_Ship_Docks/Level5" instance=ExtResource("68_fkhqw")]
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Level/Upgradable_Ship_Docks/Level5" groups=["hub_upgrade_docks"]]
+transform = Transform3D(0.999999, 0, -0.00139626, 0, 1, 0, 0.00139626, 0, 0.999999, 30.5057, 1.69417, 23.9544)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Upgradable_Ship_Docks/Level5/StaticBody3D6"]
+transform = Transform3D(6.9, 0, 0, 0, 6.9, 0, 0, 0, 6.9, 0, 0, 0)
+shape = SubResource("SphereShape3D_02hrm")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pxtyh")
