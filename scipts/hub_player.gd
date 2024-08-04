@@ -15,14 +15,14 @@ const RAY_LENGTH = 1000.0
 
 
 func _ready():
-	currency.text = "Currency: " + str(HubState.currency)
+	currency.text = "Currency: " + str(HubState.currency) + "$"
 	pass
 
 func _input(event):
 	
 	if event is InputEventKey and event.keycode == KEY_K:
 		HubState.currency += 50
-		currency.text = "Currency: " + str(HubState.currency)
+		currency.text = "Currency: " + str(HubState.currency)+ "$"
 		return
 	
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:

@@ -49,10 +49,10 @@ func update_ui():
 		return
 	
 	
-	upgradable_level_ui.cost_label.text = str(upgradable_container.\
-		upgradables_list[current_level].cost)
-	upgradable_level_ui.value_label.text = str(upgradable_container\
-		.upgradables_list[current_level].value)
+	upgradable_level_ui.cost_label.text = \
+		"-"+str(upgradable_container.upgradables_list[current_level].cost)+"$ "
+	upgradable_level_ui.value_label.text = \
+		"+"+str(upgradable_container.upgradables_list[current_level].value)
 	
 	
 	texture_button.texture_normal = upgradable_container.attribute_icon
