@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd851t8r1jksu"]
+
+[ext_resource type="PackedScene" uid="uid://doc2prcuhcj6j" path="res://assets/gltf_files/Dock_3.glb" id="1_me7me"]
+[ext_resource type="Material" uid="uid://bu3o1dsuk3x0m" path="res://Materials/BuildingAppearing.material" id="2_c5f1s"]
+
+[node name="Dock_3" instance=ExtResource("1_me7me")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="cargo_B_stacked_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="lights_002" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="basemodule_A_001" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="lights_003" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="spacetruck_001" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="hangar_smallB" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="gate_006" parent="hangar_smallB" index="0"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="gate_007" parent="hangar_smallB" index="1"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="machine_generator" parent="." index="7"]
+surface_material_override/0 = ExtResource("2_c5f1s")
+
+[node name="cable" parent="machine_generator" index="0"]
+surface_material_override/0 = ExtResource("2_c5f1s")

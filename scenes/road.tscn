@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjjdk67v2rg0w"]
+
+[ext_resource type="PackedScene" uid="uid://bnxgqrfclubmr" path="res://assets/gltf_files/Road.glb" id="1_ctciv"]
+[ext_resource type="Material" uid="uid://df8na2q3u3ket" path="res://Materials/Basic.material" id="2_h5o0v"]
+
+[node name="Road" instance=ExtResource("1_ctciv")]
+
+[node name="Plane_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_h5o0v")

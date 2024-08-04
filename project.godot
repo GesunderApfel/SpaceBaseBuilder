@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SpaceBaseBuilder"
-run/main_scene="res://scenes/base_builder_level.tscn"
+run/main_scene="res://scenes/base_building/hub.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/base_building/icon.svg"
 

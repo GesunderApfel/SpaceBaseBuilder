@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b56nyylg7ie53"]
+
+[ext_resource type="PackedScene" uid="uid://bi5jhm3b1gtna" path="res://assets/gltf_files/windturbine_tall.gltf" id="1_lb04m"]
+[ext_resource type="Script" path="res://scipts/Turbine.gd" id="2_yh1gi"]
+
+[sub_resource type="Animation" id="Animation_ds5ou"]
+resource_name = "Rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("windturbine_tall/windturbine_tall_fan:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+
+[sub_resource type="Animation" id="Animation_km5jb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("windturbine_tall/windturbine_tall_fan:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cajer"]
+_data = {
+"RESET": SubResource("Animation_km5jb"),
+"Rotate": SubResource("Animation_ds5ou")
+}
+
+[node name="windturbine_tall2" instance=ExtResource("1_lb04m")]
+script = ExtResource("2_yh1gi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_cajer")
+}

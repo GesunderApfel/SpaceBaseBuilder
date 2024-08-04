@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://bllwggxsd1mvf"]
+
+[ext_resource type="PackedScene" uid="uid://c88102elusolh" path="res://assets/gltf_files/Dock_5.glb" id="1_8u74q"]
+[ext_resource type="Material" uid="uid://bu3o1dsuk3x0m" path="res://Materials/BuildingAppearing.material" id="2_typw5"]
+
+[node name="Dock_5" instance=ExtResource("1_8u74q")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="cargo_B_stacked_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="lights_002" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="cargo_A_001" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="cargo_A_002" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="basemodule_E_001" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="basemodule_A_001" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="lights_003" parent="." index="7"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="spacetruck_001" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="spacetruck_trailer_001" parent="." index="9"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="turret_double" parent="." index="10"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="turret" parent="turret_double" index="0"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="craft_cargoA" parent="." index="11"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="hangar_largeB" parent="." index="12"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="gate_002" parent="hangar_largeB" index="0"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="gate_003" parent="hangar_largeB" index="1"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="hangar_smallB" parent="." index="13"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="gate_006" parent="hangar_smallB" index="0"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="gate_007" parent="hangar_smallB" index="1"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="machine_generator" parent="." index="14"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="cable" parent="machine_generator" index="0"]
+surface_material_override/0 = ExtResource("2_typw5")
+
+[node name="machine_generatorLarge" parent="." index="15"]
+surface_material_override/0 = ExtResource("2_typw5")
